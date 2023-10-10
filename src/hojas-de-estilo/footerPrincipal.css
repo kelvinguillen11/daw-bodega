@@ -1,0 +1,28 @@
+.footer
+{
+    width: 100%;
+    min-height: 6.25rem;
+    padding: 2.5rem 0;
+    background-color: chocolate;
+    display: flex;
+    flex-direction: column;
+    justify-content: baseline;
+    align-items: center;
+    gap: 3.125rem;
+}
+.flex-item
+{
+    display: flex;
+    gap:.625rem;
+}
+
+.descripcion-footer{
+    padding: 0px 1.2em;
+    & p
+    {
+        font-size: 1em;
+        font-weight: 300;
+        font-family: Georgia, 'Times New Roman', Times, serif;
+         text-align: center;
+    }
+}

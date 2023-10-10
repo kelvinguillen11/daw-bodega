@@ -1,20 +1,20 @@
 import '../hojas-de-estilo/encabezadoPrincipal.css';
 function EncabezadoPrincipal(){
     return(
-    <header class="menu-contenedor">
-            <div class="logo-contenedor">
-            <div class="logo">
+    <header className="menu-contenedor">
+            <div className="logo-contenedor">
+            <div className="logo">
                 <img src="" alt="Imagen " srcset=""/>
             </div>
-             <ul class="navegacion-contenedor">
-                <li><a href="#">Sobre nosotros</a></li>
+             <ul className="navegacion-contenedor">
+                <li><a href="#">sobre nosotros</a></li>
                 <li><a href="#">contactenos</a></li>
              </ul>
             </div>
-           <nav class="navegacion">
-               <ul class="navegacion-contenedor">
+           <nav className="navegacion">
+               <ul className="navegacion-contenedor">
                    <li><a href="#">iniciar sesion</a></li>
-                   <li><a href="#">Registrarse</a></li>
+                   <li><a href="#">registrarse</a></li>
                 </ul>
            </nav>
     </header>
