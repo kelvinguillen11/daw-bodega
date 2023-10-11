@@ -5,21 +5,5 @@
     display: grid;
     grid-template-columns: [col-start] 1fr [mid-start] 0fr [mid-end] 1fr [col-end];
     grid-template-rows: [row-start] 1fr [row-mid-start] 1.5fr [row-mid-end] 1fr[row-end-start] 1.5fr [row-end];
-    padding: 1.3em 0 3em 0;
-}
-
-.item-1
-{
-    grid-column-start: mid-end;
-    grid-column-end: col-end;
-    grid-row-start: row-mid-start;
-    grid-row-end: row-mid-end;
-    background-color: darkblue;
-}
-.item-2
-{
-    grid-column-start: col-start;
-    grid-column-end: mid-start;
-    grid-row-start: row-end-start;
-    background-color: darksalmon;
+    padding: 1.3em .9375rem 3em .9375rem ;
 }
