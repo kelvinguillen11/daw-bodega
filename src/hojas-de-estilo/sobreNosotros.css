@@ -1,0 +1,17 @@
+.contenedor-descripcion
+{
+    margin-top: 9.5rem;
+    color: white;
+    width: 80%;
+    padding: 0 1em;
+    border: 1px solid white;
+    border-radius: .3125rem;
+    & p{
+        text-align: justify;}
+    
+    }
+
+.contenedor-Integrantes
+{
+    margin-top: 500px;
+}

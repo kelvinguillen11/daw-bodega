@@ -1,0 +1,23 @@
+.Contenedor-card-principal
+{
+    display: flex;
+    flex-direction: row;
+    width: 80%;
+    border: 1px solid white;
+    border-radius: .125rem;
+}
+.Img-Integrante{
+    width: 11.25rem;
+    height: 11.25rem;
+    & img {
+    height: 100%;
+    width: 100%;}
+}
+.Contenedor-informacion
+{
+   width: 100%;
+   background-color: black;
+   text-align: center;
+   padding-top: 1em;
+
+}
