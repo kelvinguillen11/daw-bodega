@@ -4,6 +4,7 @@ import PaginaPrincipal from './componentes/PaginaPrincipal';
 import { Link,BrowserRouter,Route,Routes } from 'react-router-dom';
 import LogoBodega from './img/Logo-bodega.png';
 import SobreNosotros from './componentes/SobreNosotros';
+import LoginFormulario from './componentes/LoginFormulario';
 function App() {
   return (
     <BrowserRouter>
@@ -19,14 +20,15 @@ function App() {
             </div>
            <nav className="navegacion">
                <ul className="navegacion-contenedor">
-                   <li><a href="#">iniciar sesion</a></li>
+                   <li><Link to="/login">iniciar sesion</Link></li>
                    <li><a href="#">registrarse</a></li>
                 </ul>
            </nav>
     </header>
     <Routes>
         <Route path='/' element={<PaginaPrincipal/>}/>  
-        <Route path='/SobreNosotros' element={<SobreNosotros/>}/>     
+        <Route path='/SobreNosotros' element={<SobreNosotros/>}/> 
+        <Route path='/login' element={<LoginFormulario/>}/>    
     </Routes>
     </BrowserRouter>
   );
