@@ -21,7 +21,7 @@ function App() {
            <nav className="navegacion">
                <ul className="navegacion-contenedor">
                    <li><Link to="/login">iniciar sesion</Link></li>
-                   <li><a href="#">registrarse</a></li>
+                   <li><a href="Registro.jsx">registrarse</a></li>
                 </ul>
            </nav>
     </header>

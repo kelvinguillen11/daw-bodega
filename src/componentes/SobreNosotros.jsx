@@ -24,8 +24,8 @@ function SobreNosotros(){
     Nombre="Kelvin Rene Guillen Alfaro"
     />
     <CardIntegrante
-    img="Kelvin"
-    Nombre="Kelvin Rene Guillen Alfaro"
+    img="Franly"
+    Nombre="Franly Azaelo Marroquin Carmona"
     />
     </div>
     <FooterPrincipal/>

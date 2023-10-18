@@ -1,0 +1,43 @@
+
+#regiscss {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 5px solid transparent; 
+    border-image: linear-gradient(45deg, #723172, #00ff22, #ff0000, #ff008c) 1;
+    border-image-slice: 1;
+    border-radius: 5px;
+    background: transparent; 
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 5px;
+    color: #fff;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  }
+  
+  input[type="text"],
+  input[type="email"],
+  input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid ; 
+    border-radius: 3px;
+    box-sizing: border-box;
+  }
+  
+  button[type="submit"] {
+    background-color: #0f3e66;
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    padding: 10px 20px;
+    cursor: pointer;
+  }
+  
+  button[type="submit"]:hover {
+    background-color: #00b3b3;
+  }
+  
