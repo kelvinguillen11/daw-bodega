@@ -1,9 +1,10 @@
 import '../hojas-de-estilo/loginFormulario.css';
+import Registro from './Registro';
 function LoginFormulario(){
 return(
 <>
 <div className="contenedor-Formulario">
-<div className='text-red'>Hola aqui ira el formulario.</div>
+<Registro />  
 </div>
 </>
 );
