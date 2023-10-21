@@ -1,5 +1,6 @@
 import '../hojas-de-estilo/loginFormulario.css';
 import Registro from './Registro';
+
 function LoginFormulario(){
 return(
 <>
