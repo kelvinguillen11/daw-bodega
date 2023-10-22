@@ -12,7 +12,7 @@ function HeaderPrincipal(){
             </div>
              <ul className="navegacion-contenedor">
                 <li><Link to="/SobreNosotros">Sobre nosotros</Link></li>
-                <li><a href="#">contactenos</a></li>
+                <li><Link to="/contacto">Contactanos</Link></li>
              </ul>
             </div>
            <nav className="navegacion">

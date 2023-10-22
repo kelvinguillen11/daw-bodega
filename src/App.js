@@ -6,6 +6,7 @@ import SobreNosotros from './componentes/SobreNosotros';
 import LoginFormulario from './componentes/LoginFormulario';
 import RegistroFormulario from './componentes/RegistroFormulario';
 import AreaTrabajoPrincipal from './componentes/AreaTrabajoPrincipal';
+import Contacto from './componentes/Contacto';
 function App() {
   return (
    <BrowserRouter>
@@ -15,6 +16,7 @@ function App() {
   <Route path='/login' element={<LoginFormulario/>}/>
   <Route path='/registro' element={<RegistroFormulario/>}/>
   <Route path='/Area-Trabajo' element={<AreaTrabajoPrincipal/>}/>    
+  <Route path='/contacto' element={<Contacto/>}/>
 </Routes>
 </BrowserRouter>
   );
