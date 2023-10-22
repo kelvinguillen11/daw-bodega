@@ -27,6 +27,10 @@ function SobreNosotros(){
     img="Franly"
     Nombre="Franly Azaelo Marroquin Carmona"
     />
+    <CardIntegrante
+    img="Katherine"
+    Nombre="Katherine Yamileth Flores Avila"
+    />
     </div>
     <FooterPrincipal/>
     </>
