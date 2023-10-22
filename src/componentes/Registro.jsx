@@ -30,7 +30,7 @@ function Registro() {
         <label htmlFor="contrasena">Contraseña:</label>
         <input type="password" id="contrasena" name="contrasena" />
       </div>
-      <button type="submit">Registrar</button>
+      <button type="submit">Registrarse</button>
     </form>
     
    </>

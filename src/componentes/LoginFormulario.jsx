@@ -8,7 +8,7 @@ function LoginFormulario() {
       
       <div className="contenedor-Formulario">
         <div className='Formulario'>
-          <label className='text-center text-black'>Inicio de Sesión</label>
+         <center> <label className='text-center text-black'>Inicio de Sesión</label></center>
           <form>
             <div>
               <label htmlFor="cuenta">Ingrese su Correo:</label>
@@ -18,7 +18,7 @@ function LoginFormulario() {
               <label htmlFor="contrasenia">Ingrese su contraseña:</label>
               <input type="password" id="contrasenia" name="contrasenia" />
             </div>
-            <button type="button">Aceptar</button>
+            <button type="button">Logearse</button>
           </form>
         </div>
       </div>
