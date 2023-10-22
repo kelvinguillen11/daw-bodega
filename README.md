@@ -42,9 +42,11 @@ No es obligatorio usar `eject`. El conjunto de características preconfiguradas 
 Este proyecto está bajo la licencia Atribución-NoComercial-CompartirIgual 4.0 Internacional (CC BY-NC-SA 4.0), que establece:
 
 Tienes la libertad de:
-- Compartir: copiar y redistribuir el material en cualquier medio o formato.
-- Adaptar: remezclar, transformar y construir a partir del material.
+- Compartir: copiar y redistribuir el material en cualquier medio o formato. Adaptar remezclar, transformar y construir a partir del material.
 La licenciante no puede revocar estas libertades siempre y cuando sigas los términos de la licencia.
+
+Este trabajo está licenciado bajo una Licencia Creative Commons Atribución 4.0 Internacional.
+   Para ver una copia de esta licencia, visita [Creative Commons Attribution 4.0 International License](https://creativecommons.org/licenses/by/4.0/).
 
 ## Aprende Más
 
