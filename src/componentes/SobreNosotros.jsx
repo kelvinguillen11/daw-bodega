@@ -33,6 +33,10 @@ function SobreNosotros(){
     img="Katherine"
     Nombre="Katherine Yamileth Flores Avila"
     />
+    <CardIntegrante
+    img="Gorety"
+    Nombre="Dania Gorety Tejada Campos"
+    />
     </div>
     <FooterPrincipal/>
     </>
