@@ -1,9 +1,11 @@
 import '../hojas-de-estilo/loginFormulario.css';
+import HeaderPrincipal from './HeaderPrincipal';
 import VideoPrincipal from './VideoPrincipal';
-
+import { Link} from 'react-router-dom';
 function LoginFormulario() {
   return (
     <>
+    <HeaderPrincipal/>
     <VideoPrincipal/>
       <div className="contenedor-Formulario">
        <div className='Formulario bg-dark text-white'> 
@@ -17,7 +19,7 @@ function LoginFormulario() {
             <label htmlFor="contrasenia">Ingrese su contraseña:</label>
             <input type="password" id="contrasenia" name="contrasenia" />
           </div>
-          <button type="button">Aceptar</button>
+          <Link to="/Area-Trabajo"><button type="button">Aceptar</button></Link>
         </form>
       </div>
       </div>

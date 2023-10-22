@@ -1,11 +1,13 @@
 import '../hojas-de-estilo/sobreNosotros.css';
 import CardIntegrante from './CardIntengrante';
 import FooterPrincipal from "./FooterPrincipal";
+import HeaderPrincipal from './HeaderPrincipal';
 import VideoPrincipal from "./VideoPrincipal";
 
 function SobreNosotros(){
     return(
     <>
+    <HeaderPrincipal/>
     <VideoPrincipal/>
     <div className="container-xxl d-flex justify-content-center">
         <div className='contenedor-descripcion'>
