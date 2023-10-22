@@ -1,5 +1,5 @@
 
-import '../hojas-de-estilo/Registro.css';
+import '../hojas-de-estilo/registro.css';
 import FooterPrincipal from "./FooterPrincipal";
 import VideoPrincipal from "./VideoPrincipal";
 
@@ -7,7 +7,9 @@ function Registro() {
   return (
     <>
     <VideoPrincipal/>
+    
     <form action="registro" id="regiscss">
+      
       <div>
         <label htmlFor="nombre">Nombre:</label>
         <input type="text" id="nombre" name="nombre" />
