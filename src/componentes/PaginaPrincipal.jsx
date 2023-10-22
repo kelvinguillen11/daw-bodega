@@ -6,7 +6,7 @@ import VideoPrincipal from './VideoPrincipal';
 function PaginaPrincipal(){
     return(
       <>
-         <VideoPrincipal/>
+        <VideoPrincipal/>
         <ContenidoPrincipal/>  
         <FooterPrincipal/>
       </>  

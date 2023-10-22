@@ -1,12 +1,13 @@
 import '../hojas-de-estilo/loginFormulario.css';
-import Registro from './Registro';
+import VideoPrincipal from './VideoPrincipal';
 
 function LoginFormulario() {
   return (
     <>
+    <VideoPrincipal/>
       <div className="contenedor-Formulario">
-        <Registro />
-        <label>Inicio de Sesión</label>
+       <div className='Formulario bg-dark text-white'> 
+        <label className='text-center text-white'>Inicio de Sesión</label>
         <form>
           <div>
             <label htmlFor="cuenta">Ingrese su cuenta:</label>
@@ -18,6 +19,7 @@ function LoginFormulario() {
           </div>
           <button type="button">Aceptar</button>
         </form>
+      </div>
       </div>
     </>
   );
