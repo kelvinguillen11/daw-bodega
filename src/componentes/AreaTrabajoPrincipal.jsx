@@ -1,4 +1,5 @@
 import "../hojas-de-estilo/areaTrabajoPrincipal.css";
+import TablaInventario from "./TablaInventario";
 function AreaTrabajoPrincipal(){
     return(
         <>
@@ -11,6 +12,7 @@ function AreaTrabajoPrincipal(){
         </div>
         </header>
         <main className="Contenedor-trabajo-Principal">
+            <TablaInventario/>
     
 
         </main>
