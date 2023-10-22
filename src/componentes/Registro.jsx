@@ -1,5 +1,5 @@
 
-import '../hojas-de-estilo/registro.css';
+import '../hojas-de-estilo/Registro.css';
 import FooterPrincipal from "./FooterPrincipal";
 import VideoPrincipal from "./VideoPrincipal";
 
