@@ -27,6 +27,10 @@ function SobreNosotros(){
     img="Kelvin"
     Nombre="Kelvin Rene Guillen Alfaro"
     />
+    <CardIntegrante
+    img="Katherine"
+    Nombre="Katherine Yamileth Flores Avila"
+    />
     </div>
     <FooterPrincipal/>
     </>
