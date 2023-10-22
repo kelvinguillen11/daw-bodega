@@ -27,6 +27,10 @@ function SobreNosotros(){
     img="Kelvin"
     Nombre="Kelvin Rene Guillen Alfaro"
     />
+    <CardIntegrante
+    img="Gorety"
+    Nombre="Dania Gorety Tejada Campos"
+    />
     </div>
     <FooterPrincipal/>
     </>
