@@ -27,7 +27,7 @@ function SobreNosotros(){
     />
     <CardIntegrante
     img="Franly"
-    Nombre="Franly Azaelo Marroquin Carmona"
+    Nombre="Franly Azael Marroquin Carmona"
     />
     <CardIntegrante
     img="Katherine"
