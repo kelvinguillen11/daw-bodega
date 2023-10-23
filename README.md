@@ -8,11 +8,17 @@ La siguiente Guia esta realizada de manera que, cualquier usuario pueda ejecutar
 
 1.Al iniciar por primera vez, el usuario tendra que registrarse, haciendo click en el apartado de Registrarse, lo llevara a un formulario donde ingresara sus datos en los 
 campos requeridos.
+
 2.Una vez ingresados los datos el usuario sera redirigido a la seccion de login donde podra iniciar sesion ingresando su nombre de usuario y contrasena.
+
 3.Al Loguearse sera redirigido al Area de trabajo donde podra visualizar los datos que han sido recuperados.
+
 4.En esta Area el usuario podra agregar ventas realizadas, y/o podra modificar o eliminar los registros existentes, y/o los que el usuario haya ingresado.
+
 5.Una vez terminado su trabajo, este podra exportar en una tabla de Excel todos los datos que han sido recuperados.
+
 6.Cuando el usuario quiera salir, tendra un boton en la parte superior para cerrar la sesion.
+
 7.Ahora cuando quiera volver a trabajar, el usuario tendra que ir directamente al apartado de Iniciar Sesion.
 
 # Guia de instalacion:
