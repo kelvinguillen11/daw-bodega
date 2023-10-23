@@ -1,9 +1,9 @@
-#Descripcion y contexto:
+# Descripcion y contexto:
 
 La siguiente aplicacion web, esta creada para dar solucion a un problema de perdida de datos, en el cual se ha decido usar una libreria de interfaz llamada React, y 
 un administrador de paquetes llamado Nodejs.
 
-#Guia de instalacion:
+# Guia de instalacion:
 
 para poder ejecutar esta aplicacion, debe instalar NodeJs en su entorno, una vez clonado el repositorio puede ejecutar el comando 
 (Recuerde que la terminal tiene que ser abierta dentro de la carpeta del repositorio).
@@ -55,7 +55,7 @@ grupo de laboratorio: DAW03L
 Vease nuestra licencia en el siguiente enlace: [Licencia mozilla 2.0](LICENSE.TXT)
 
 
-##lINKS ADJUNTOS:
+## lINKS ADJUNTOS:
 link de nuestro tablero de Trello: [Tablero](https://trello.com/b/aGvkBY2g/proyecto-daw)
 link de Nuestros Mockups: [Diseño de Inicio:](https://www.figma.com/file/twM6SWRXnpAvG92JpielCO/Untitled?type=design&node-id=0%3A1&mode=design&t=rrUbNWXNkUXdHt3w-1)
                           [Diseño “Sobre Nosotros”:](https://www.figma.com/file/ZqTKonZYH0aB4JVkqWwAjs/Untitled?type=design&node-id=0%3A1&mode=design&t=GecvyLs7kL2bdAhF-1)
