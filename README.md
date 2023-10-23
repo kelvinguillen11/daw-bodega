@@ -81,12 +81,27 @@ Vease nuestra licencia en el siguiente enlace: [Licencia mozilla 2.0](LICENSE.TX
 
 
 ## lINKS ADJUNTOS:
+
+### Trello
+
 link de nuestro tablero de Trello: [Tablero](https://trello.com/b/aGvkBY2g/proyecto-daw)
-link de Nuestros Mockups: [Diseño de Inicio:](https://www.figma.com/file/twM6SWRXnpAvG92JpielCO/Untitled?type=design&node-id=0%3A1&mode=design&t=rrUbNWXNkUXdHt3w-1)
-                          [Diseño “Sobre Nosotros”:](https://www.figma.com/file/ZqTKonZYH0aB4JVkqWwAjs/Untitled?type=design&node-id=0%3A1&mode=design&t=GecvyLs7kL2bdAhF-1)
-                          [Diseño de “Inicio de Sesión”:](https://www.figma.com/file/luGoCVxSgbxW1Plk4jjmgt/Untitled?type=design&node-id=0%3A1&mode=design&t=X32XGRvjyUODCW8S-1)
-                          [Diseño de “Registrarse”:](https://www.figma.com/file/ZIU6WDw3PAzOZOMgh9n0KC/Untitled?type=design&node-id=0%3A1&mode=design&t=DZ1EexflXGJAGGdM-1)
-                          [Diseño de “Contáctanos”:](https://www.figma.com/file/lQBVVl9nuE1LiFGG9sBzyF/Untitled?type=design&node-id=0%3A1&mode=design&t=VxkHfew7G7GmVojb-1)
-                          [Diseño de “Registro de Productos”:](https://www.figma.com/file/NpRnYkTnEzjZkh7z7Yu79e/Untitled?type=design&node-id=0%3A1&mode=design&t=9whEZ5nWCFHqQiPa-1)
-                          [Diseño de “Inventario de Productos”:](https://www.figma.com/file/qlIGkW6R6sYGlSUHGYXqsb/Untitled?type=design&node-id=0%3A1&mode=design&t=5NJ5ZFhnzOkbVris-1)
+
+### Mockups: 
+
+[Diseño de Inicio:](https://www.figma.com/file/twM6SWRXnpAvG92JpielCO/Untitled?type=design&node-id=0%3A1&mode=design&t=rrUbNWXNkUXdHt3w-1)
+                          
+[Diseño “Sobre Nosotros”:](https://www.figma.com/file/ZqTKonZYH0aB4JVkqWwAjs/Untitled?type=design&node-id=0%3A1&mode=design&t=GecvyLs7kL2bdAhF-1)
+                         
+[Diseño de “Inicio de Sesión”:](https://www.figma.com/file/luGoCVxSgbxW1Plk4jjmgt/Untitled?type=design&node-id=0%3A1&mode=design&t=X32XGRvjyUODCW8S-1)
+                         
+[Diseño de “Registrarse”:](https://www.figma.com/file/ZIU6WDw3PAzOZOMgh9n0KC/Untitled?type=design&node-id=0%3A1&mode=design&t=DZ1EexflXGJAGGdM-1)
+                         
+[Diseño de “Contáctanos”:](https://www.figma.com/file/lQBVVl9nuE1LiFGG9sBzyF/Untitled?type=design&node-id=0%3A1&mode=design&t=VxkHfew7G7GmVojb-1)
+                          
+[Diseño de “Registro de Productos”:](https://www.figma.com/file/NpRnYkTnEzjZkh7z7Yu79e/Untitled?type=design&node-id=0%3A1&mode=design&t=9whEZ5nWCFHqQiPa-1)
+                          
+[Diseño de “Inventario de Productos”:](https://www.figma.com/file/qlIGkW6R6sYGlSUHGYXqsb/Untitled?type=design&node-id=0%3A1&mode=design&t=5NJ5ZFhnzOkbVris-1)
+
+### Licencia
+
 link de nuestra licencia implementada: [Mozilla License 2.0](https://www.mozilla.org/en-US/MPL/2.0/)
