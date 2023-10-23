@@ -25,6 +25,7 @@ campos requeridos.
 
 para poder ejecutar esta aplicacion, debe instalar NodeJs(puede descargarlo desde [aqui](https://nodejs.org/es/download)) en su entorno, una vez clonado el repositorio puede ejecutar el comando 
 (Recuerde que la terminal tiene que ser abierta dentro de la carpeta del repositorio).
+
 ### 'npm i'
 
 Este descargara todos los paquetes que se encuentren descritos en el archivo "Packgage.json"
