@@ -1,0 +1,56 @@
+.contenedor-contacto-principal{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.contact-info {
+    background: white;
+    border: 2px solid rgba(255,255,255, .2);
+    border-radius: 10px;
+    backdrop-filter: blur(8px);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    margin-top: 50px;
+    text-align: left;
+    color: #333;
+    padding: 1.875rem 2.5rem;
+    & p {
+        font-size: 35px;
+        margin-bottom: 40px; 
+    }
+    & img {
+        max-width: 30%;
+        margin-top: 20px;
+        float: right;
+        margin-left: 150px;
+        animation: slide 10s infinite;
+    }
+    & address {
+        font-style: normal;
+        font-size: 35px;
+        margin-top: 10px;
+    }
+    & address a {
+        text-decoration: none;
+    }
+    
+}
+@keyframes slide {
+    0% {
+        left: -100%; /* La imagen comienza fuera del contenedor a la izquierda */
+        opacity: 0; /* La imagen es invisible al principio */
+    }
+    25% {
+        left: 0%; /* La imagen se desliza hacia la posición central */
+        opacity: 1; /* La imagen se vuelve completamente visible */
+    }
+    75% {
+        left: 0%; /* La imagen permanece en su posición central */
+        opacity: 1; /* La imagen permanece visible */
+    }
+    100% {
+        left: 100%; /* La imagen se desliza fuera del contenedor a la derecha */
+        opacity: 0; /* La imagen se vuelve invisible al final */
+    }
+}

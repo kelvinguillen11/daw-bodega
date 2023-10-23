@@ -37,6 +37,10 @@ function SobreNosotros(){
     img="Gorety"
     Nombre="Dania Gorety Tejada Campos"
     />
+     <CardIntegrante
+    img="Diego"
+    Nombre="Diego Fernando Betancourt Franco"
+    />
     </div>
     <FooterPrincipal/>
     </>

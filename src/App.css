@@ -10,6 +10,7 @@
     height: 6.25rem;
     padding-top: 1.0625rem;
     background-color: transparent;
+    backdrop-filter: blur(20px);
     display: flex;
     flex-wrap: wrap;
     align-items: center;

@@ -1,5 +1,7 @@
 import '../hojas-de-estilo/footerPrincipal.css';
 import LogoBodega from '../img/Logo-bodega.png';
+import {BiLogoGithub} from'react-icons/bi';
+import 'react-icons/bi';
 function FooterPrincipal(){
     return(
         <footer className="footer">
@@ -17,9 +19,9 @@ function FooterPrincipal(){
         </div>
         <div className="item-git flex-item">
            <div className="git">
-            <img src="" alt="logo de git" srcset=""/>
+          <BiLogoGithub/>
            </div>
-           <span>codigo fuente</span>
+           <span><a href='https://github.com/kelvinguillen11/daw-bodega.git'>codigo fuente</a></span>
         </div>
     </footer>
     );

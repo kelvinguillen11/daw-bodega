@@ -1,35 +1,35 @@
 function FormularioProducto(){
     return(
         <form className="container row">
-        <fieldset className="border border-black mt-5">
+        <fieldset className="border border-black  rounded-2 mt-3">
             <legend>Registrar producto</legend>
             <div className="row col-12">
             <div className="col-4">
-            <label htmlFor="inputID">ID producto</label>
-            <input type="text" id="inputID"/>
+            <label htmlFor="inputID" className="form-label">ID producto</label>
+            <input type="text" id="inputID" className="form-control"/>
             </div>
             <div className="col-4">
-            <label htmlFor="inputNombre">Nombre producto</label>
-            <input type="text" id="inputNombre"/>
+            <label htmlFor="inputNombre" className="form-label">Nombre producto</label>
+            <input type="text" id="inputNombre" className="form-control"/>
             </div>
             <div className="col-4">
-            <label htmlFor="inputPrecioUnitario">Nombre producto</label>
-            <input type="text" id="inputPrecioUnitario"/>
+            <label htmlFor="inputPrecioUnitario" className="form-label">Nombre producto</label>
+            <input type="text" id="inputPrecioUnitario" className="form-control"/>
             </div>
             </div>
-            <div className="row col-12">
+            <div className="row col-12 mt-3">
             <div className="col-4">
-            <label htmlFor="inputCantidadVendida">Cantidad vendida</label>
-            <input type="text" id="inputCantidadVendida"/>
+            <label htmlFor="inputCantidadVendida" className="form-label" >Cantidad vendida</label>
+            <input type="text" id="inputCantidadVendida" className="form-control"/>
             </div>
             <div className="col-4">
-            <label htmlFor="inputCategoria">Categoria del producto</label>
-            <input type="text" id="inputCategoria"/>
+            <label htmlFor="inputCategoria" className="form-label">Categoria del producto</label>
+            <input type="text" id="inputCategoria" className="form-control"/>
             </div>
             </div>
-            <div className="row col-12">
+            <div className="row col-12 mt-3 ">
             <div className="col-12">
-            <label htmlFor="inputDescripcion">Descripcion del producto</label>
+            <label htmlFor="inputDescripcion" className="form-label">Descripcion del producto</label>
             <textarea id="inputDescripcion" className="w-100" rows="2"/>
             </div>
             </div>

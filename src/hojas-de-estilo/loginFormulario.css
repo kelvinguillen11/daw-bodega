@@ -1,50 +1,95 @@
-.contenedor-Formulario {
-    max-width: 600px;
-    margin: 0 auto;
-    margin-top: 150px;
-    padding: 20px;
-    border: 25px solid #ccc;
-    border-radius: 10px;
-    background-color: #f9f9f9;
-    font-family: cursive;
+.Contenedor-Login-Principal{
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center ;
+}
+.Login-wrapper{
+  width: 32.5rem;
+  background-color: transparent;
+  color: #fff;
+  border-radius: .625rem;
+  padding: 1.875rem 2.5rem;
+  border: 2px solid rgba(255,255,255, .2);
+  backdrop-filter: blur(2px);
+  & h1{
+    font-size: 2.25em;
+    text-align: center;
   }
- 
-
-  
-  .label {
-    display: block;
-    margin-bottom: 5px;
-    color: #333;
-  }
-  
-  .input[type="text"],
-  .input[type="password"] {
+  & button{
     width: 100%;
-    padding: 10px;
-    margin-bottom: 10px;
-    border: 1px solid #ccc;
-    border-radius: 3px;
-    box-sizing: border-box;
-  }
-  
-  .button[type="button"] {
-    background-color: #007BFF;
-    color: #fff;
-    border: none;
-    border-radius: 3px;
-    padding: 10px 20px;
+    height: 45px;
+    background-color: #fff;
+    border-radius: 2.5rem;
+    box-shadow: 0 0 10px rgba(0,0,0, .2);
     cursor: pointer;
-    font-weight: bold;
+    font-size: 1rem;
+    color: #333;
+    font-weight: 600 ;
   }
-  
-  .button[type="button"]:hover {
-    background-color: #0056b3;
+  & button:hover{
+    background-color: #005B41;
+   opacity: 4;
+   color: #fff;
   }
-  
-  .Formulario {
-    background-color: #f9f9f9;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.input-box
+{
+  position: relative;
+  width: 100%;
+  height: 3.125rem;
+  margin: 1.875rem 0;
+  & input{
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    border: 2px solid rgba(255,255,255, .2);
+    border-radius: 2.5rem;
+    font-size: 1em;
+    color: #fff;
+    padding: 1.25rem 2.8125rem 1.25rem 1.25rem;
   }
-  
+  & input::placeholder{
+    color: #fff;
+  }
+  & i{
+    position: absolute;
+    right: 1.25rem;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.25rem;
+  }
+}
+.recuerda-olvidado{
+  display: flex;
+  justify-content: space-between;
+  font-size: .9063rem;
+  margin: -0.9375rem 0 .9375rem;
+  &  input{
+    accent-color: #fff;
+    margin-right: 3px;
+  }
+  & a{
+    color: #fff;
+    text-decoration: none;
+  }
+  & a:hover{
+    text-decoration: underline;
+  }
+}
+.link-registro{
+  font-size: 14.5px;
+  text-align: center;
+  margin: 1.25rem 0 15px;
+  & a{
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+  }
+  & a:hover{
+    text-decoration: underline;
+  }
+}
