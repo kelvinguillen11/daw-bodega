@@ -1,6 +1,16 @@
-# Comenzando con Create React App
+#Descripcion y contexto:
 
-Este proyecto fue inicializado con [Create React App](https://github.com/facebook/create-react-app).
+La siguiente aplicacion web, esta creada para dar solucion a un problema de perdida de datos, en el cual se ha decido usar una libreria de interfaz llamada React, y 
+un administrador de paquetes llamado Nodejs.
+
+#Guia de instalacion:
+
+para poder ejecutar esta aplicacion, debe instalar NodeJs en su entorno, una vez clonado el repositorio puede ejecutar el comando 
+(Recuerde que la terminal tiene que ser abierta dentro de la carpeta del repositorio).
+### 'npm i'
+
+Este descargara todos los paquetes que se encuentren descritos en el archivo "Packgage.json"
+
 
 ## Scripts Disponibles
 
@@ -13,11 +23,6 @@ Abre [http://localhost:3000](http://localhost:3000) en tu navegador.
 
 La página se recargará automáticamente cuando realices cambios.\
 También podrás ver cualquier error de lint en la consola.
-
-### `npm test`
-
-Ejecuta el runner de pruebas en modo interactivo.\
-Consulta la sección sobre [cómo ejecutar pruebas](https://facebook.github.io/create-react-app/docs/running-tests) para obtener más información.
 
 ### `npm run build`
 
@@ -36,46 +41,27 @@ Consulta la sección sobre [despliegue](https://facebook.github.io/create-react-
 Si no estás satisfecho con la herramienta de construcción y las opciones de configuración, puedes hacer `eject` en cualquier momento. Este comando copiará todos los archivos de configuración y las dependencias transitivas (webpack, Babel, ESLint, etc.) directamente a tu proyecto para que tengas un control total sobre ellos. Todas las demás operaciones excepto `eject` seguirán funcionando, pero apuntarán a los scripts copiados para que puedas personalizarlos. En este punto, estarás por tu cuenta.
 
 No es obligatorio usar `eject`. El conjunto de características preconfiguradas es adecuado para despliegues pequeños y medianos, y no debes sentirte obligado a usar esta función. Sin embargo, entendemos que esta herramienta no sería útil si no puedes personalizarla cuando estés listo para hacerlo.
+🐛 ¡Aquí tienes un gusano moviéndose en la parte de abajo! 🐛
+
+## Autores:
+grupo de laboratorio: DAW03L
+*Kelvin René Guillen Alfaro                              
+*Franly Azael Marroquin Carmona                                              
+*Dania Gorety Tejada Campos                                                     
+*Katherine Yamileth Flores Avila                                               
+*Diego Fernando Betancourt Franco   
 
 ## Licencia 📄
+Vease nuestra licencia en el siguiente enlace: [Licencia mozilla 2.0](LICENSE.TXT)
 
-Este proyecto está bajo la licencia Atribución-NoComercial-CompartirIgual 4.0 Internacional (CC BY-NC-SA 4.0), que establece:
 
-Tienes la libertad de:
-- Compartir: copiar y redistribuir el material en cualquier medio o formato. Adaptar remezclar, transformar y construir a partir del material.
-La licenciante no puede revocar estas libertades siempre y cuando sigas los términos de la licencia.
-
-Este trabajo está licenciado bajo una Licencia Creative Commons Atribución 4.0 Internacional.
-   Para ver una copia de esta licencia, visita [Creative Commons Attribution 4.0 International License](https://creativecommons.org/licenses/by/4.0/).
-
-## Aprende Más
-
-Puedes aprender más en la [documentación de Create React App](https://facebook.github.io/create-react-app/docs/getting-started).
-
-Para aprender React, visita la [documentación de React](https://reactjs.org/).
-
-### División de Código
-
-Esta sección se ha movido aquí: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Análisis del Tamaño del Paquete
-
-Esta sección se ha movido aquí: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Creación de una Aplicación Web Progresiva
-
-Esta sección se ha movido aquí: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Configuración Avanzada
-
-Esta sección se ha movido aquí: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Despliegue
-
-Esta sección se ha movido aquí: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` falla al minimizar
-
-Esta sección se ha movido aquí: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
-
-🐛 ¡Aquí tienes un gusano moviéndose en la parte de abajo! 🐛
+##lINKS ADJUNTOS:
+link de nuestro tablero de Trello: [Tablero](https://trello.com/b/aGvkBY2g/proyecto-daw)
+link de Nuestros Mockups: [Diseño de Inicio:](https://www.figma.com/file/twM6SWRXnpAvG92JpielCO/Untitled?type=design&node-id=0%3A1&mode=design&t=rrUbNWXNkUXdHt3w-1)
+                          [Diseño “Sobre Nosotros”:](https://www.figma.com/file/ZqTKonZYH0aB4JVkqWwAjs/Untitled?type=design&node-id=0%3A1&mode=design&t=GecvyLs7kL2bdAhF-1)
+                          [Diseño de “Inicio de Sesión”:](https://www.figma.com/file/luGoCVxSgbxW1Plk4jjmgt/Untitled?type=design&node-id=0%3A1&mode=design&t=X32XGRvjyUODCW8S-1)
+                          [Diseño de “Registrarse”:](https://www.figma.com/file/ZIU6WDw3PAzOZOMgh9n0KC/Untitled?type=design&node-id=0%3A1&mode=design&t=DZ1EexflXGJAGGdM-1)
+                          [Diseño de “Contáctanos”:](https://www.figma.com/file/lQBVVl9nuE1LiFGG9sBzyF/Untitled?type=design&node-id=0%3A1&mode=design&t=VxkHfew7G7GmVojb-1)
+                          [Diseño de “Registro de Productos”:](https://www.figma.com/file/NpRnYkTnEzjZkh7z7Yu79e/Untitled?type=design&node-id=0%3A1&mode=design&t=9whEZ5nWCFHqQiPa-1)
+                          [Diseño de “Inventario de Productos”:](https://www.figma.com/file/qlIGkW6R6sYGlSUHGYXqsb/Untitled?type=design&node-id=0%3A1&mode=design&t=5NJ5ZFhnzOkbVris-1)
+link de nuestra licencia implementada: [Mozilla License 2.0](https://www.mozilla.org/en-US/MPL/2.0/)
