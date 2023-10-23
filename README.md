@@ -63,11 +63,17 @@ No es obligatorio usar `eject`. El conjunto de características preconfiguradas 
 🐛 ¡Aquí tienes un gusano moviéndose en la parte de abajo! 🐛
 
 ## Autores:
+
 grupo de laboratorio: DAW03L
+
 *Kelvin René Guillen Alfaro                              
+
 *Franly Azael Marroquin Carmona                                              
+
 *Dania Gorety Tejada Campos                                                     
+
 *Katherine Yamileth Flores Avila                                               
+
 *Diego Fernando Betancourt Franco   
 
 ## Licencia 📄
