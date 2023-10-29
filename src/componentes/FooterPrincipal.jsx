@@ -7,7 +7,7 @@ function FooterPrincipal(){
         <footer className="footer">
         <div className="item-logo flex-item">
         <div className="logo-footer">
-        <img src={LogoBodega} alt="imagen-logo" srcset=""/>
+        <img srcSet={LogoBodega} alt="imagen-logo"/>
         </div>
         <h3>Sistema Bodega UDB.</h3>
         </div>

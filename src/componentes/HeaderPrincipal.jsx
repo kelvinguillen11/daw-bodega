@@ -8,7 +8,7 @@ function HeaderPrincipal(){
     <header className="menu-contenedor">
             <div className="logo-contenedor">
             <div className="logo">
-               <Link to="/"><img src={LogoBodega} alt="Imagen logo " srcset=""/></Link>
+               <Link to="/"><img srcSet={LogoBodega} alt="Imagen logo " /></Link>
             </div>
              <ul className="navegacion-contenedor">
                 <li><Link to="/SobreNosotros">Sobre nosotros</Link></li>

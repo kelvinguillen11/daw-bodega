@@ -4,47 +4,78 @@ import FooterPrincipal from "./FooterPrincipal";
 import HeaderPrincipal from './HeaderPrincipal';
 import VideoPrincipal from "./VideoPrincipal";
 import {BiUser,BiEnvelope,BiIdCard, BiLockAlt} from "react-icons/bi";
+import {useForm} from 'react-hook-form';
+import  {findUserByDui, RegisterUser} from'../services/User/userUtils';
 function Registro() {
+
+  const {register,handleSubmit} = useForm();
+
+  const setUserRegister = (data) =>
+  {
+    RegisterUser(data);
+  }
   return (
     <>
     <VideoPrincipal/>
     <div className='contenedor-registro-principal'>
     <div className='registro-wrapper'>
     <h1>Registro</h1>
-    <form action="" >
+    <form action="" onSubmit={handleSubmit(setUserRegister)}>
       <div className=' text-white'>
-        <label htmlFor="inputNombre">Nombre:</label>
+        <label>Nombre</label>
         <div className='input-group mt-1 '>
-        <span class="input-group-text bg-transparent text-white" id="Nombre"><BiUser/></span>
-        <input type="text" id="inputNombre" name="inputNombre" className='form-control bg-transparent text-white'  aria-describedby="Nombre" />
+        <span className="input-group-text bg-transparent text-white" id="Nombre"><BiUser/></span>
+        <input type="text" className='form-control bg-transparent text-white'  aria-describedby="Nombre" 
+        {...register('NombreUsuario',{
+        })}
+        />
         </div>
         </div>
         <div className='mt-2'>
-        <label htmlFor="inputApellido">Apellido</label>
+        <label>Apellido</label>
         <div className='input-group mt-1'>
-        <span class="input-group-text bg-transparent text-white" id="Apellido"><BiUser/></span>
-        <input type="text" id="inputApellido" name="inputApellido" className='form-control bg-transparent text-white'  aria-describedby="Apellido" />
+        <span className="input-group-text bg-transparent text-white" id="Apellido"><BiUser/></span>
+        <input type="text" className='form-control bg-transparent text-white'  aria-describedby="Apellido" 
+        
+        {...register('apellidoUsuario')}
+        />
         </div>
       </div>
       <div className='mt-2'>
-        <label htmlFor="inputCorreo">Correo</label>
+        <label>Correo</label>
         <div className='input-group mt-1'>
-        <span class="input-group-text bg-transparent text-white" id="Correo"><BiEnvelope/></span>
-        <input type="email" id="inputCorreo" name="inputCorreo" className='form-control bg-transparent text-white' aria-describedby="Correo" />
+        <span className="input-group-text bg-transparent text-white" id="Correo"><BiEnvelope/></span>
+        <input type="email" className='form-control bg-transparent text-white' aria-describedby="Correo" 
+        {...register('emailUsuario')}
+        />
         </div>
       </div>
       <div className='mt-2'>
-        <label htmlFor="inputDui">DUI:</label>
+        <label>DUI</label>
         <div className='input-group mt-1'>
-        <span class="input-group-text bg-transparent text-white" id="DUI"><BiIdCard/></span>
-        <input type="text" id="inputDui" name="inputDui" className='form-control bg-transparent text-white'  aria-describedby="DUI" />
+        <span className="input-group-text bg-transparent text-white" id="DUI"><BiIdCard/></span>
+        <input type="text" className='form-control bg-transparent text-white'  aria-describedby="DUI"
+        {...register('duiUsuario',{
+          validate : findUserByDui
+        })}
+        />
         </div>
         </div>
         <div className='mt-2'>
-        <label htmlFor="inputPassword">Password:</label>
+        <label>Contraseña
+        </label>
         <div className='input-group mt-1'>
-        <span class="input-group-text bg-transparent text-white" id="Password"><BiLockAlt/></span>
-        <input type="text" id="inputPassword" name="inputPasword" className='form-control bg-transparent text-white' aria-describedby="Password" />
+        <span className="input-group-text bg-transparent text-white" id="Password"><BiLockAlt/></span>
+        <input type="text"  className='form-control bg-transparent text-white' aria-describedby="Password" 
+        {...register('passwordUsuario')}/>
+        </div>
+      </div>
+      <div className='mt-2'>
+        <label> repita su contraseña</label>
+        <div className='input-group mt-1'>
+        <span className="input-group-text bg-transparent text-white" id="Password"><BiLockAlt/></span>
+        <input type="text"  className='form-control bg-transparent text-white' aria-describedby="Password" 
+        {...register('repeatpasswordUsuario')}/>
         </div>
       </div>
       <button type='submit' className='btn mt-5'>Registrarse</button>

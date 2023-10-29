@@ -5,20 +5,26 @@ import { Link} from 'react-router-dom';
 import {BiUser,BiLockAlt} from "react-icons/bi";
 import FooterPrincipal from './FooterPrincipal';
 import { useForm } from 'react-hook-form';
-
+import { useNavigate } from 'react-router-dom';
+import { loginUser } from '../services/User/userUtils';
 
 function LoginFormulario() {
+  const navigate = useNavigate();
   const {register,handleSubmit} = useForm();
-  const Submit = ()=>{
-   
-  }
+  const handleLogin = (data)=>{
+    const aut = loginUser(data);
+    if(aut)
+    {
+      navigate("/Area-Trabajo");
+    }
+}
   return (
     <>
     <HeaderPrincipal/>
     <VideoPrincipal/>
     <div className='Contenedor-Login-Principal'>
     <div className='Login-wrapper'>
-    <form onSubmit={handleSubmit(Submit)}> 
+    <form onSubmit={handleSubmit(handleLogin)}> 
     <h1>Login</h1>
     <div className='input-box'>
     <input type='text' placeholder='Usuario' {...register('userLogin',{
