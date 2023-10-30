@@ -1,4 +1,12 @@
-
+class Usuario {
+    constructor(nombre,apellido,correo,dui,contrasena){
+        this.Nombre = nombre;
+        this.apellido = apellido;
+        this.correo = correo;
+        this.dui = dui;
+        this.contrasena = contrasena;
+    }
+}
 const getUser = () =>
 {
  const Users = window.localStorage.getItem("users");
@@ -12,11 +20,22 @@ const getUser = () =>
         return [];
     }
 }
+const createObjectUsuario = (data) =>
+{
+    const Users = new Usuario;
+    Users.Nombre= data.NombreUsuario;
+    Users.apellido= data.apellidoUsuario;
+    Users.correo= data.emailUsuario;
+    Users.dui= data.duiUsuario;
+    Users.contrasena= data.passwordUsuario;
 
+    return Users
+}
 export const RegisterUser = (data) =>
 {
-    let arrayUser= getUser();
-    arrayUser.push(data);
+    const arrayUser= getUser();
+    const User = createObjectUsuario(data);
+    arrayUser.push(User);
     window.localStorage.setItem("users", JSON.stringify(arrayUser));
     console.log(arrayUser);
 }
@@ -26,7 +45,7 @@ export const findUserByDui = (value) =>
     let arrayUser= getUser();
     if(arrayUser !== null)
     {
-       const  Find = arrayUser.find(user => user.duiUsuario === value)
+       const  Find = arrayUser.find(user => user.dui === value)
        if(Find)
        {
         return false;
@@ -43,28 +62,31 @@ export const findUserByDui = (value) =>
 }
 
 export const loginUser = (data) =>{
-    let arrayUser= getUser();
+    const arrayUser= getUser();
     if(arrayUser !== null)
     {
-       const  Find = arrayUser.filter(user => user.duiUsuario === data.userLogin)
+       const  Find = arrayUser.find(user => user.dui === data.userLogin)
        if(Find)
        {
-        console.log(Find);
-       if( Find.passwordUsuario === data.userPassword){
-        console.log("true");
+       if( Find.contrasena === data.userPassword){
+            return true;
        } 
        else
        {
-        console.log("valores evaluados" + Find[0].passwordUsuario + " " + data.userPassword)
+        return false;
        }
        }
        else{
-        console.log("No existe ese usuario.")
         return false;
        }
     }
     else
     {
-      
+      return false;
     }
+}
+
+export const isPasswordValidate = (pass,repeatPass) =>
+{
+    return pass === repeatPass;
 }

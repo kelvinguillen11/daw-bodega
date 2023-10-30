@@ -5,10 +5,10 @@ import HeaderPrincipal from './HeaderPrincipal';
 import VideoPrincipal from "./VideoPrincipal";
 import {BiUser,BiEnvelope,BiIdCard, BiLockAlt} from "react-icons/bi";
 import {useForm} from 'react-hook-form';
-import  {findUserByDui, RegisterUser} from'../services/User/userUtils';
+import  {findUserByDui, RegisterUser, isPasswordValidate} from'../services/User/userUtils';
 function Registro() {
 
-  const {register,handleSubmit} = useForm();
+  const {register,formState : {errors}, handleSubmit, getValues} = useForm();
 
   const setUserRegister = (data) =>
   {
@@ -27,6 +27,7 @@ function Registro() {
         <span className="input-group-text bg-transparent text-white" id="Nombre"><BiUser/></span>
         <input type="text" className='form-control bg-transparent text-white'  aria-describedby="Nombre" 
         {...register('NombreUsuario',{
+            required: true 
         })}
         />
         </div>
@@ -36,17 +37,21 @@ function Registro() {
         <div className='input-group mt-1'>
         <span className="input-group-text bg-transparent text-white" id="Apellido"><BiUser/></span>
         <input type="text" className='form-control bg-transparent text-white'  aria-describedby="Apellido" 
-        
-        {...register('apellidoUsuario')}
+        {...register('apellidoUsuario',{
+          required: true
+        })}
         />
         </div>
+        
       </div>
       <div className='mt-2'>
         <label>Correo</label>
         <div className='input-group mt-1'>
         <span className="input-group-text bg-transparent text-white" id="Correo"><BiEnvelope/></span>
         <input type="email" className='form-control bg-transparent text-white' aria-describedby="Correo" 
-        {...register('emailUsuario')}
+        {...register('emailUsuario',{
+          required: true
+        })}
         />
         </div>
       </div>
@@ -60,6 +65,7 @@ function Registro() {
         })}
         />
         </div>
+        {errors.duiUsuario?.type === "validate" && <p>Este Dui ya esta registrado.</p>}
         </div>
         <div className='mt-2'>
         <label>Contraseña
@@ -67,7 +73,9 @@ function Registro() {
         <div className='input-group mt-1'>
         <span className="input-group-text bg-transparent text-white" id="Password"><BiLockAlt/></span>
         <input type="text"  className='form-control bg-transparent text-white' aria-describedby="Password" 
-        {...register('passwordUsuario')}/>
+        {...register('passwordUsuario',{
+          required: true
+        })}/>
         </div>
       </div>
       <div className='mt-2'>
@@ -75,8 +83,11 @@ function Registro() {
         <div className='input-group mt-1'>
         <span className="input-group-text bg-transparent text-white" id="Password"><BiLockAlt/></span>
         <input type="text"  className='form-control bg-transparent text-white' aria-describedby="Password" 
-        {...register('repeatpasswordUsuario')}/>
+        {...register('repeatpassword',{
+          validate: (value) => isPasswordValidate(value, getValues("passwordUsuario"))
+        })}/>
         </div>
+        {errors.repeatpassword?.type === "validate" && <p>Las contraseñas no coinciden.</p>}
       </div>
       <button type='submit' className='btn mt-5'>Registrarse</button>
     </form>
