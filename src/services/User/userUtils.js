@@ -22,7 +22,7 @@ const getUser = () =>
 }
 const createObjectUsuario = (data) =>
 {
-    const Users = new Usuario;
+    const Users = new Usuario();
     Users.Nombre= data.NombreUsuario;
     Users.apellido= data.apellidoUsuario;
     Users.correo= data.emailUsuario;

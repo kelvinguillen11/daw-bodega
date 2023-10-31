@@ -1,7 +1,5 @@
 
 import '../hojas-de-estilo/Registro.css';
-import FooterPrincipal from "./FooterPrincipal";
-import HeaderPrincipal from './HeaderPrincipal';
 import VideoPrincipal from "./VideoPrincipal";
 import {BiUser,BiEnvelope,BiIdCard, BiLockAlt} from "react-icons/bi";
 import {useForm} from 'react-hook-form';

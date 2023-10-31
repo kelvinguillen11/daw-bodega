@@ -17,7 +17,7 @@ function AreaTrabajoPrincipal(){
         <main className="Contenedor-trabajo-Principal">
            
           <FormularioProducto/> 
-            <div className="container border border-black">
+            <div className="container border border-black mt-5 mb-5">
             <TablaInventario/>
             </div>   
         </main>

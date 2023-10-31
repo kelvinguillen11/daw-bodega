@@ -13,7 +13,7 @@ function FormularioProducto(){
             <input type="text" id="inputNombre" className="form-control"/>
             </div>
             <div className="col-4">
-            <label htmlFor="inputPrecioUnitario" className="form-label">Nombre producto</label>
+            <label htmlFor="inputPrecioUnitario" className="form-label">Precio unitario</label>
             <input type="text" id="inputPrecioUnitario" className="form-control"/>
             </div>
             </div>

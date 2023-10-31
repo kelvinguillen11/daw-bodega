@@ -1,4 +1,22 @@
+import TableRowVenta from "./TableRowVenta";
+import '../services/Ventas/ventasUtils'
+import { obtainValueByApi } from "../services/Ventas/ventasUtils";
+import { useState, useEffect} from "react";
 function TablaInventario(){
+const [myArraySellers,setMyArraySellers] = useState([]);
+
+useEffect(() => {
+  const fetchData = async () => {
+    try {
+      const data = await obtainValueByApi();
+      setMyArraySellers(data);
+    } catch (error) {
+      console.error('Error en la solicitud:', error);
+    }
+  };
+
+  fetchData();
+}, []);
     return(
         <table className="table">
   <thead className="bg-dark text-white">
@@ -13,8 +31,10 @@ function TablaInventario(){
     </tr>
   </thead>
   <tbody>
-    
+    { myArraySellers.map(venta => (<TableRowVenta key={venta.id} item={venta}/>)
+    )}
   </tbody>
+    
 </table>
     );
 }
