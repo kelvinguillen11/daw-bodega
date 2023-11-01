@@ -1,14 +1,17 @@
 import TableRowVenta from "./TableRowVenta";
 import '../services/Ventas/ventasUtils'
-import { obtainValueByApi } from "../services/Ventas/ventasUtils";
+import {initLocalStorage} from "../services/Ventas/ventasUtils";
 import { useState, useEffect} from "react";
+import FormularioProducto from "./FormularioProducto";
 function TablaInventario(){
 const [myArraySellers,setMyArraySellers] = useState([]);
-
+const newVenta = (NuevaVenta) =>{
+  setMyArraySellers([...myArraySellers,NuevaVenta]);
+}
 useEffect(() => {
   const fetchData = async () => {
     try {
-      const data = await obtainValueByApi();
+      const data = await initLocalStorage();
       setMyArraySellers(data);
     } catch (error) {
       console.error('Error en la solicitud:', error);
@@ -18,6 +21,13 @@ useEffect(() => {
   fetchData();
 }, []);
     return(
+      <main className="Contenedor-trabajo-Principal">
+      <div className="container-xl mt-5 mb-5">
+      <FormularioProducto
+      setNewVenta={newVenta}
+      />
+      </div>
+      <div className="container-xl border border-black rounded-2 mt-5 mb-5">
         <table className="table">
   <thead className="bg-dark text-white">
     <tr>
@@ -32,10 +42,13 @@ useEffect(() => {
   </thead>
   <tbody>
     { myArraySellers.map(venta => (<TableRowVenta key={venta.id} item={venta}/>)
-    )}
+    )
+    }
   </tbody>
     
 </table>
+</div>
+</main>
     );
 }
 export default TablaInventario;

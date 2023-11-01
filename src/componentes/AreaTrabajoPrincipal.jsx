@@ -14,13 +14,10 @@ function AreaTrabajoPrincipal(){
             <Link to="/"><button type="button" className="btn btn-primary  rounded-4">Salir</button></Link>
         </div>
         </header>
-        <main className="Contenedor-trabajo-Principal">
+        
            
-          <FormularioProducto/> 
-            <div className="container border border-black mt-5 mb-5">
-            <TablaInventario/>
-            </div>   
-        </main>
+         <TablaInventario/>  
+       
         <FooterPrincipal/>
         </>
     );
