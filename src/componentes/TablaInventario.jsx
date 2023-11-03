@@ -1,31 +1,14 @@
 import TableRowVenta from "./TableRowVenta";
-import '../services/Ventas/ventasUtils'
-import {DeleteVenta, initLocalStorage} from "../services/Ventas/ventasUtils";
-import { useState, useEffect} from "react";
 import FormularioProducto from "./FormularioProducto";
+import { useTable } from "../services/hooks/useTable";
+import { useEffect} from "react";
 function TablaInventario(){
-const [myArraySellers,setMyArraySellers] = useState([]);
-const newVenta = (NuevaVenta) =>{
-  setMyArraySellers([...myArraySellers,NuevaVenta]);
-}
-useEffect(() => {
-  const fetchData = async () => {
-    try {
-      const data = await initLocalStorage();
-      setMyArraySellers(data);
-    } catch (error) {
-      console.error('Error en la solicitud:', error);
-    }
-  };
-
+ const [myArraySellers,newVenta,eliminateRow,fetchData] = useTable([]);
+  
+ useEffect(() => {
   fetchData();
 }, []);
 
-const eliminateRow = (item) =>{
-const newVentas = myArraySellers.filter(venta => venta.id !== item.id)
-setMyArraySellers(newVentas);
-DeleteVenta(item);
-}
     return(
       <main className="Contenedor-trabajo-Principal">
       <div className="container-xl mt-5 mb-5">
