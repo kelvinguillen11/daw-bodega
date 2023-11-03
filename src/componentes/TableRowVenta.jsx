@@ -6,9 +6,7 @@ function TableRowVenta({item, eliminate}){
     
     const setRow = (updateData) =>
     {   
-            Modificate(updateData);
-
-            
+            Modificate(updateData);        
     }
     return(
         <tr >

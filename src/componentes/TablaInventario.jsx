@@ -3,8 +3,6 @@ import '../services/Ventas/ventasUtils'
 import {DeleteVenta, initLocalStorage} from "../services/Ventas/ventasUtils";
 import { useState, useEffect} from "react";
 import FormularioProducto from "./FormularioProducto";
-import FormularioUD from "./FormularioUD";
-import { array } from "i/lib/util";
 function TablaInventario(){
 const [myArraySellers,setMyArraySellers] = useState([]);
 const newVenta = (NuevaVenta) =>{
@@ -23,9 +21,10 @@ useEffect(() => {
   fetchData();
 }, []);
 
- const eliminateRow = (item) =>{
-  const newVentas = myArraySellers.filter(venta => venta.id !== item.id)
-  setMyArraySellers(newVentas);
+const eliminateRow = (item) =>{
+const newVentas = myArraySellers.filter(venta => venta.id !== item.id)
+setMyArraySellers(newVentas);
+DeleteVenta(item);
 }
     return(
       <main className="Contenedor-trabajo-Principal">
