@@ -1,8 +1,10 @@
 import TableRowVenta from "./TableRowVenta";
 import '../services/Ventas/ventasUtils'
-import {initLocalStorage} from "../services/Ventas/ventasUtils";
+import {DeleteVenta, initLocalStorage} from "../services/Ventas/ventasUtils";
 import { useState, useEffect} from "react";
 import FormularioProducto from "./FormularioProducto";
+import FormularioUD from "./FormularioUD";
+import { array } from "i/lib/util";
 function TablaInventario(){
 const [myArraySellers,setMyArraySellers] = useState([]);
 const newVenta = (NuevaVenta) =>{
@@ -20,6 +22,11 @@ useEffect(() => {
 
   fetchData();
 }, []);
+
+ const eliminateRow = (item) =>{
+  const newVentas = myArraySellers.filter(venta => venta.id !== item.id)
+  setMyArraySellers(newVentas);
+}
     return(
       <main className="Contenedor-trabajo-Principal">
       <div className="container-xl mt-5 mb-5">
@@ -27,21 +34,22 @@ useEffect(() => {
       setNewVenta={newVenta}
       />
       </div>
-      <div className="container-xl border border-black rounded-2 mt-5 mb-5">
+      <div className="container-xxl border border-black rounded-2 mt-5 mb-5">
         <table className="table">
-  <thead className="bg-dark text-white">
+  <thead className="">
     <tr>
       <th scope="col">ID Producto</th>
       <th scope="col">Nombre</th>
       <th scope="col">Precio Unitario</th>
       <th scope="col">Cantidad Vendida</th>
-      <th scope="col">Descripcion</th>
+      <th scope="col" >Descripcion</th>
       <th scope="col">Categoria</th>
-      <th scope="col"colSpan="2">Opciones</th>
+      <th scope="col" colSpan='2'>Opciones</th>
     </tr>
   </thead>
   <tbody>
-    { myArraySellers.map(venta => (<TableRowVenta key={venta.id} item={venta}/>)
+    { 
+    myArraySellers.map(venta => (<TableRowVenta key={venta.id} item={venta} eliminate={eliminateRow}/>)
     )
     }
   </tbody>

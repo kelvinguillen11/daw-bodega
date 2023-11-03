@@ -67,3 +67,23 @@ const setVentas = (data) =>
   const newVentas = [...Ventas,data];
   window.localStorage.setItem('Ventas', JSON.stringify(newVentas));
 }
+
+export const modificateVenta =(venta) =>{
+ const ventas = getVentas();
+ if(venta)
+ {
+  const newVentas =  ventas.filter(ventas => ventas.id !== venta.id)
+  newVentas.push(venta);
+  window.localStorage.setItem('Ventas', JSON.stringify(newVentas));
+ }  
+} 
+
+export const DeleteVenta =(venta) =>{
+  const ventas = getVentas();
+  if(venta)
+  {
+   const newVentas =  ventas.filter(ventas => ventas.id !== venta.id)
+   window.localStorage.setItem('Ventas', JSON.stringify(newVentas));
+   return newVentas;
+  }  
+ } 
