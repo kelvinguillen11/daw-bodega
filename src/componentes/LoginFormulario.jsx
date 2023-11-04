@@ -7,14 +7,16 @@ import FooterPrincipal from './FooterPrincipal';
 import { useForm } from 'react-hook-form';
 import { useNavigate } from 'react-router-dom';
 import { loginUser } from '../services/User/userUtils';
+import {SetSessionUser} from '../services/UserSession/SessionUtils';
 
-function LoginFormulario() {
+function LoginFormulario({setUser}) {
   const navigate = useNavigate();
   const {register,handleSubmit} = useForm();
   const handleLogin = (data)=>{
     const aut = loginUser(data);
     if(aut)
     {
+      SetSessionUser(data);
       navigate("/Area-Trabajo");
     }
 }
