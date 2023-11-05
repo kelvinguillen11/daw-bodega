@@ -4,29 +4,47 @@ import VideoPrincipal from './VideoPrincipal';
 import { Link} from 'react-router-dom';
 import {BiUser,BiLockAlt} from "react-icons/bi";
 import FooterPrincipal from './FooterPrincipal';
-function LoginFormulario() {
+import { useForm } from 'react-hook-form';
+import { useNavigate } from 'react-router-dom';
+import { loginUser } from '../services/User/userUtils';
+import {SetSessionUser} from '../services/UserSession/SessionUtils';
+
+function LoginFormulario({setUser}) {
+  const navigate = useNavigate();
+  const {register,handleSubmit} = useForm();
+  const handleLogin = (data)=>{
+    const aut = loginUser(data);
+    if(aut)
+    {
+      SetSessionUser(data);
+      navigate("/Area-Trabajo");
+    }
+}
   return (
     <>
     <HeaderPrincipal/>
     <VideoPrincipal/>
     <div className='Contenedor-Login-Principal'>
     <div className='Login-wrapper'>
-    <form action=''> 
+    <form onSubmit={handleSubmit(handleLogin)}> 
     <h1>Login</h1>
     <div className='input-box'>
-    <input type='text' placeholder='Usuario' required /> 
+    <input type='text' placeholder='Usuario' {...register('userLogin',{
+      required: true
+    })} required /> 
     <i><BiUser/></i>
     </div>
     <div className='input-box'>
-    <input type='password' placeholder='password' required />
+    <input type='password' placeholder='password' {...register('userPassword',{
+      required: true
+    })} />
     <i><BiLockAlt/></i> 
     </div>
     <div className='recuerda-olvidado'>
     <label><input type='checkbox'/> Recuerdame</label>
     <a href='#'>olvidaste tu password?</a>
     </div>
-    <Link to="/Area-Trabajo"><button type='submit' className='btn'>Login</button></Link>
-
+    <button type='submit' className='btn'>Login</button>
     <div className='link-registro'>
     <p>No tienes una cuenta? <Link to="/registro">Registrate</Link></p>
     </div>

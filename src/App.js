@@ -1,12 +1,14 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import './App.css';
 import PaginaPrincipal from './componentes/PaginaPrincipal';
-import { BrowserRouter,Route,Routes } from 'react-router-dom';
+import { BrowserRouter,Route,Routes, Redirect, Navigate, redirect } from 'react-router-dom';
+import { getSessionUser } from './services/UserSession/SessionUtils';
 import SobreNosotros from './componentes/SobreNosotros';
 import LoginFormulario from './componentes/LoginFormulario';
 import RegistroFormulario from './componentes/RegistroFormulario';
 import AreaTrabajoPrincipal from './componentes/AreaTrabajoPrincipal';
 import Contacto from './componentes/Contacto';
+import { ProtectedRoute } from './componentes/ProtectedRoute';
 function App() {
   return (
    <BrowserRouter>
@@ -15,7 +17,12 @@ function App() {
   <Route path='/SobreNosotros' element={<SobreNosotros/>}/> 
   <Route path='/login' element={<LoginFormulario/>}/>
   <Route path='/registro' element={<RegistroFormulario/>}/>
-  <Route path='/Area-Trabajo' element={<AreaTrabajoPrincipal/>}/>    
+  <Route
+  path='/Area-Trabajo'  element={
+    <ProtectedRoute>
+      <AreaTrabajoPrincipal/>
+    </ProtectedRoute>
+  }/>    
   <Route path='/contacto' element={<Contacto/>}/>
 </Routes>
 </BrowserRouter>

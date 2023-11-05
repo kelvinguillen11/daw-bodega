@@ -3,6 +3,7 @@ import "../hojas-de-estilo/areaTrabajoPrincipal.css";
 import FooterPrincipal from "./FooterPrincipal";
 import FormularioProducto from "./FormularioProducto";
 import TablaInventario from "./TablaInventario";
+import styled from "styled-components";
 function AreaTrabajoPrincipal(){
     return(
         <>
@@ -14,16 +15,14 @@ function AreaTrabajoPrincipal(){
             <Link to="/"><button type="button" className="btn btn-primary  rounded-4">Salir</button></Link>
         </div>
         </header>
-        <main className="Contenedor-trabajo-Principal">
+        
            
-          <FormularioProducto/> 
-            <div className="container border border-black">
-            <TablaInventario/>
-            </div>   
-        </main>
+         <TablaInventario/>  
+       
         <FooterPrincipal/>
         </>
     );
 }
 
 export default AreaTrabajoPrincipal;
+
