@@ -25,7 +25,8 @@ function Registro() {
         <span className="input-group-text bg-transparent text-white" id="Nombre"><BiUser/></span>
         <input type="text" className='form-control bg-transparent text-white'  aria-describedby="Nombre" 
         {...register('NombreUsuario',{
-            required: true 
+            required: true,
+            //escribe aqui pattern: /tu regExp/
         })}
         />
         </div>
@@ -36,7 +37,8 @@ function Registro() {
         <span className="input-group-text bg-transparent text-white" id="Apellido"><BiUser/></span>
         <input type="text" className='form-control bg-transparent text-white'  aria-describedby="Apellido" 
         {...register('apellidoUsuario',{
-          required: true
+          required: true,
+          //escribe aqui pattern: /tu regExp/
         })}
         />
         </div>
@@ -48,7 +50,8 @@ function Registro() {
         <span className="input-group-text bg-transparent text-white" id="Correo"><BiEnvelope/></span>
         <input type="email" className='form-control bg-transparent text-white' aria-describedby="Correo" 
         {...register('emailUsuario',{
-          required: true
+          required: true,
+          //escribe aqui pattern: /tu regExp/
         })}
         />
         </div>
@@ -59,7 +62,8 @@ function Registro() {
         <span className="input-group-text bg-transparent text-white" id="DUI"><BiIdCard/></span>
         <input type="text" className='form-control bg-transparent text-white'  aria-describedby="DUI"
         {...register('duiUsuario',{
-          validate : findUserByDui
+          validate : findUserByDui,
+          //escribe aqui pattern: /tu regExp/
         })}
         />
         </div>
@@ -72,7 +76,8 @@ function Registro() {
         <span className="input-group-text bg-transparent text-white" id="Password"><BiLockAlt/></span>
         <input type="text"  className='form-control bg-transparent text-white' aria-describedby="Password" 
         {...register('passwordUsuario',{
-          required: true
+          required: true,
+          //escribe aqui pattern: /tu regExp/
         })}/>
         </div>
       </div>
@@ -82,7 +87,8 @@ function Registro() {
         <span className="input-group-text bg-transparent text-white" id="Password"><BiLockAlt/></span>
         <input type="text"  className='form-control bg-transparent text-white' aria-describedby="Password" 
         {...register('repeatpassword',{
-          validate: (value) => isPasswordValidate(value, getValues("passwordUsuario"))
+          validate: (value) => isPasswordValidate(value, getValues("passwordUsuario")),
+          //escribe aqui pattern: /tu regExp/
         })}/>
         </div>
         {errors.repeatpassword?.type === "validate" && <p>Las contraseñas no coinciden.</p>}
