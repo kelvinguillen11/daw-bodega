@@ -85,3 +85,16 @@ export const DeleteVenta =(venta) =>{
    return newVentas;
   }  
  } 
+
+ export const findVentaById = (value) =>{
+    const Ventas = getVentas();
+    const Find = Ventas.find(venta => venta.id === parseInt(value));
+    if(Find)
+    {
+      return false;
+    }
+    else 
+    {
+      return true;
+    }
+ }

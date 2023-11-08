@@ -1,8 +1,8 @@
 import { useForm } from "react-hook-form";
-import { newObjectVenta } from "../services/Ventas/ventasUtils";
+import { newObjectVenta, findVentaById } from "../services/Ventas/ventasUtils";
 
 function FormularioProducto({setNewVenta}){
-    const {register,handleSubmit} = useForm();
+    const {register,handleSubmit, formState:{errors}} = useForm();
 
     const RegisterVenta = (data) =>
     {
@@ -16,7 +16,11 @@ function FormularioProducto({setNewVenta}){
             <div className="row col-12">
             <div className="col-4">
             <label className="form-label">ID producto</label>
-            <input type="text" className="form-control" {...register('id')}/>
+            <input type="text" className="form-control" {...register('id',{
+                required: true,
+                validate:  findVentaById
+            })}/>
+            {errors.id?.type === 'validate' && <p>Este Id, ya existe!.</p>}
             </div>
             <div className="col-4">
             <label  className="form-label">Nombre producto</label>
