@@ -90,3 +90,25 @@ export const isPasswordValidate = (pass,repeatPass) =>
 {
     return pass === repeatPass;
 }
+
+export const findUserNameByDui = (value) =>
+{
+    const arrayUser= getUser();
+    if(arrayUser !== null)
+    {
+       const  Find = arrayUser.find(user => user.dui === value)
+       if(Find)
+       {
+         const nameUser = Find.Nombre;
+         return nameUser;
+       }
+       else{
+        return null;
+    }
+     }
+    else
+    {
+        return null;
+    }
+
+}

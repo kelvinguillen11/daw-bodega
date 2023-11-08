@@ -1,3 +1,5 @@
+import { findUserNameByDui } from "../User/userUtils";
+
 export const SetSessionUser = (user) => {
     if(user)
     {
@@ -8,5 +10,25 @@ export const SetSessionUser = (user) => {
 
 export const getSessionUser =  ()=>{
     const User =  window.localStorage.getItem("UserLogged");
-    return  JSON.parse(User);
+    const UserInfo =  JSON.parse(User);
+    if(UserInfo)
+    {
+        return UserInfo.userLogin;
+    }
+}
+
+export const getNameUser = () =>{
+    const User = getSessionUser();
+    const InfoToReturn = findUserNameByDui(User);
+    if(InfoToReturn)
+    {
+        return InfoToReturn;
+    }
+    else
+    {
+        return null;
+    }
+}
+export const logoutSession = () =>{
+    window.localStorage.removeItem("UserLogged");
 }

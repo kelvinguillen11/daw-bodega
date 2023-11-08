@@ -17,14 +17,12 @@
     const Ventas = window.localStorage.getItem('Ventas');
     if(Ventas !==null)
     {
-      console.log("Estoy pasando por el if");
       return JSON.parse(Ventas);
     }
     else
     {
       const Ventas = await obtainValueByApi();
       window.localStorage.setItem('Ventas', JSON.stringify(Ventas));
-      console.log("Estoy pasando por el else");
       return Ventas;
     }
  }
