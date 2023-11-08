@@ -29,6 +29,7 @@ const handlerVenta = (data) =>
             <label  className="form-label">Categoria del producto</label>
             <input type="text"  className="form-control" {...register('category')}/>
             </div>
+            <div>probando el git</div>
             </div>
             <div className="row col-12 mt-3 ">
             <div className="col-12">
