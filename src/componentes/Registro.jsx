@@ -51,7 +51,7 @@ function Registro() {
                   type="email"
                   className='form-control bg-transparent text-white'
                   aria-describedby="Correo"
-                  placeholder="Ejm: messi@gmail.com"
+                  placeholder=" messi@gmail.com"
                   {...register('emailUsuario', {
                     required: true,
                     pattern: {
