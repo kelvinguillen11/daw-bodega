@@ -1,9 +1,7 @@
 import { Link } from "react-router-dom";
 import "../hojas-de-estilo/areaTrabajoPrincipal.css";
 import FooterPrincipal from "./FooterPrincipal";
-import FormularioProducto from "./FormularioProducto";
 import TablaInventario from "./TablaInventario";
-import styled from "styled-components";
 function AreaTrabajoPrincipal(){
     return(
         <>
