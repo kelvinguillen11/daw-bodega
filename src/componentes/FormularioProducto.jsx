@@ -1,14 +1,27 @@
 import { useForm } from "react-hook-form";
 import { newObjectVenta, findVentaById } from "../services/Ventas/ventasUtils";
-
+import { isSessionExist} from "../services/UserSession/SessionUtils";
+import {toast,Toaster} from 'react-hot-toast';
 function FormularioProducto({setNewVenta}){
     const {register,handleSubmit, formState:{errors}} = useForm();
-
+    
     const RegisterVenta = (data) =>
     {
-        const handlerData = newObjectVenta(data);
-        setNewVenta(handlerData);
+        const responseSession = isSessionExist();
+        if(responseSession){
+            const handlerData = newObjectVenta(data);
+            setNewVenta(handlerData);
+            notifySuccessVenta();
+        }
+        else
+        {
+            notifyErrorVenta();
+        }
     }
+
+    const notifySuccessVenta = () => toast.success('Usuario creado exitosamente');
+    const notifyErrorVenta = () => toast.error('Ha ocurrido un error,intentalo mas tarde');
+
     return(
         <form className="container-xl row ms-1" onSubmit={handleSubmit(RegisterVenta)}>
         <fieldset className="border border-black  rounded-2 mt-3">
@@ -51,6 +64,7 @@ function FormularioProducto({setNewVenta}){
            <button type="submit" className="btn btn-success col-4">Agregar Producto</button>
             </div>
         </fieldset>
+        <Toaster/>
         </form>
     );
 }

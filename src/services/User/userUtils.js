@@ -37,7 +37,6 @@ export const RegisterUser = (data) =>
     const User = createObjectUsuario(data);
     arrayUser.push(User);
     window.localStorage.setItem("users", JSON.stringify(arrayUser));
-    console.log(arrayUser);
 }
 
 export const findUserByDui = (value) =>

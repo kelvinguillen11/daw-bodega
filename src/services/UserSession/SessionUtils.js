@@ -32,3 +32,15 @@ export const getNameUser = () =>{
 export const logoutSession = () =>{
     window.localStorage.removeItem("UserLogged");
 }
+
+export const isSessionExist = () =>{
+    const Session =  window.localStorage.getItem("UserLogged");
+    if(Session)
+    {
+        return true;
+    }
+    else
+    {
+        return false;
+    }
+}

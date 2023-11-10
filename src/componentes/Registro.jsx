@@ -4,14 +4,23 @@ import VideoPrincipal from "./VideoPrincipal";
 import {BiUser,BiEnvelope,BiIdCard, BiLockAlt} from "react-icons/bi";
 import {useForm} from 'react-hook-form';
 import  {findUserByDui, RegisterUser, isPasswordValidate} from'../services/User/userUtils';
+import {toast,Toaster} from 'react-hot-toast';
 function Registro() {
 
   const {register,formState : {errors}, handleSubmit, getValues} = useForm();
-
+  
   const setUserRegister = (data) =>
   {
+   try{ 
     RegisterUser(data);
+    notifySuccessRegister();
+  }catch(error)
+  {
+    notifyErrorRegister();
   }
+  }
+  const notifySuccessRegister = () => toast.success('Usuario creado exitosamente');
+  const notifyErrorRegister = () => toast.error('Ha ocurrido un error,intentalo mas tarde');
   return (
     <>
     <VideoPrincipal/>
@@ -97,6 +106,7 @@ function Registro() {
     </form>
     </div>
     </div>
+    <Toaster/>
    </>
   );
 }

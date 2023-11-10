@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from 'react';
+
 import './App.css';
 import PaginaPrincipal from './componentes/PaginaPrincipal';
-import { BrowserRouter,Route,Routes, Redirect, Navigate, redirect } from 'react-router-dom';
+import { BrowserRouter,Route,Routes } from 'react-router-dom';
 import SobreNosotros from './componentes/SobreNosotros';
 import LoginFormulario from './componentes/LoginFormulario';
 import RegistroFormulario from './componentes/RegistroFormulario';

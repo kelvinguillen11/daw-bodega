@@ -1,4 +1,5 @@
- const obtainValueByApi = async () => {
+
+export  const obtainValueByApi = async () => {
     const Url = "https://fakestoreapi.com/products";
     try {
       const response = await fetch(Url);
@@ -12,7 +13,10 @@
       throw error; 
     }
   }
-
+export const createLocalStorage = () => {
+  const storage = [];
+  window.localStorage.setItem('Ventas',JSON.stringify(storage));
+}
  export const initLocalStorage = async () =>{
     const Ventas = window.localStorage.getItem('Ventas');
     if(Ventas !==null)
@@ -43,7 +47,7 @@
 export const newObjectVenta = (data) =>
 {
   const newVenta = new Venta();
-  newVenta.id = data.id;
+  newVenta.id = parseInt(data.id);
   newVenta.title = data.title;
   newVenta.price = data.price;
   newVenta.rating = {count : data.count};
@@ -53,7 +57,7 @@ export const newObjectVenta = (data) =>
   return newVenta;
 }
 
-const getVentas = () =>
+export const getVentas = () =>
 {
    const Ventas = window.localStorage.getItem('Ventas');
    return JSON.parse(Ventas);
@@ -88,6 +92,7 @@ export const DeleteVenta =(venta) =>{
 
  export const findVentaById = (value) =>{
     const Ventas = getVentas();
+    if(Ventas){
     const Find = Ventas.find(venta => venta.id === parseInt(value));
     if(Find)
     {
@@ -95,6 +100,10 @@ export const DeleteVenta =(venta) =>{
     }
     else 
     {
+      return true;
+    }
+    }
+    else{
       return true;
     }
  }

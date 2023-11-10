@@ -1,20 +1,32 @@
 import TableRowVenta from "./TableRowVenta";
 import FormularioProducto from "./FormularioProducto";
 import { useTable } from "../services/hooks/useTable";
-import { useEffect} from "react";
-function TablaInventario(){
- const [myArraySellers,newVenta,eliminateRow,fetchData] = useTable([]);
-  
- useEffect(() => {
-  fetchData();
-}, []);
+import { useEffect, useState} from "react";
+import {toast,Toaster} from 'react-hot-toast';
+import { DataByApi } from "./ElementosBoton";
 
-    return(
+function TablaInventario(){
+ 
+  const [myArraySellers,newVenta,eliminateRow,getLocalStorage] = useTable([]);
+  const [notify,setNotify] = useState(false); 
+  useEffect(()=>{
+      getLocalStorage();
+  },[]);
+const notifySuccessVenta = () => toast.success('Datos cargados desde la web');
+const notifyErrorVenta = () => toast.error('Ha ocurrido un error,intentalo mas tarde');
+  return(
       <main className="Contenedor-trabajo-Principal">
       <div className="container-xl mt-5 mb-5">
       <FormularioProducto
       setNewVenta={newVenta}
       />
+      </div>
+      <div className="container-xxl border border-black rounded-2 mt-5 mb-5">
+          <h3>Opciones de datos:</h3>
+          <div>
+            <span>cargar datos desde la Web</span>
+            <DataByApi/>
+          </div>
       </div>
       <div className="container-xxl border border-black rounded-2 mt-5 mb-5">
         <table className="table">
@@ -38,6 +50,7 @@ function TablaInventario(){
     
 </table>
 </div>
+<Toaster/>
 </main>
     );
 }
