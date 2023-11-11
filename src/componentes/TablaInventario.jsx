@@ -26,9 +26,9 @@ const goToApi = () => navigate('/Area-Trabajo/DatosWeb');
       </div>
       <div className="container-xxl border border-black rounded-2 mt-5 mb-5">
           <h3>Opciones de datos:</h3>
-          <div>
+          <div className="d-sm-flex flex-sm-column justify-content-center">
             <span>cargar datos desde la Web</span>
-            <button onClick={goToApi}>Datos desde la web</button>
+            <button className="btn btn-success" onClick={goToApi}>Datos desde la web</button>
           </div>
       </div>
       <div className="container-xxl border border-black rounded-2 mt-5 mb-5">

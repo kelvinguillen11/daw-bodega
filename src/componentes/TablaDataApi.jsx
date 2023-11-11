@@ -1,8 +1,8 @@
-import { useTable } from "../services/hooks/useTable";
 import { useEffect, useState} from "react";
 import {toast,Toaster} from 'react-hot-toast';
 import TableRowApi from "./TableRowApi";
 import { UseDataAPi } from "../services/hooks/useDataApi";
+import { addRowsToWs } from "../services/Api/apiUtils";
 function TablaDataApi () {
  const [Data, fetchData] = UseDataAPi([]);
  const [notify,setNotify] = useState(false);
@@ -22,24 +22,31 @@ function TablaDataApi () {
    useEffect(() => {
      if(notify)
      {
-       (Data !=0)? notifySuccessVenta(): notifyErrorVenta();
+       (Data.length !==0)? notifySuccessApi(): notifyErrorApi();
      }
     },[notify]);
    
-   const notifySuccessVenta = () => toast.success('Datos cargados desde la web');
-   const notifyErrorVenta = () => toast.error('Ha ocurrido un error,intentalo mas tarde');
+   const notifySuccessApi = () => toast.success('Datos cargados desde la web');
+   const notifyErrorApi = () => toast.error('Ha ocurrido un error,intentalo mas tarde');
+   
    const rowClick = (ventaSelected) => {
       setRowSelected([...rowSelected,ventaSelected]);
-      console.log(rowSelected);
    } 
 
-   const addRowsToWs = () => {
-    const Ventas = window.localStorage.getItem("Ventas");
-    const parseVentas = JSON.parse(Ventas);
-    const newVentas =[...parseVentas,...rowSelected];
-    console.log(newVentas);
-    window.localStorage.setItem("Ventas", JSON.stringify(newVentas));
+   const addRows =  () => {
+    if(rowSelected.length !==0){
+      addRowsToWs(rowSelected);
+      setRowSelected([]);
+      notifySucessData();
+    }
+    else
+    {
+      notifyerrorData();
+    }  
+    
    }
+   const notifySucessData = () => {toast.success('Datos guardados en su Area de trabajo.')};
+   const notifyerrorData = () => {toast.error('No hay datos para importar, seleccione al menos uno.')};
    return(
     <main className="Contenedor-trabajo-Principal">
       <div className="container-xl mt-5 mb-5">
@@ -58,7 +65,7 @@ function TablaDataApi () {
     </tr>
   </thead>
   <tbody>
-    {Data.length !=0 &&
+    {Data.length !==0 &&
     Data.map((venta,index) => (<TableRowApi key={index} item={venta} onclick={rowClick}/>)
     )
     }
@@ -67,7 +74,7 @@ function TablaDataApi () {
 </table>
 </div>
 <div>
-  <button onClick={addRowsToWs} > Confirmar cambios</button>
+  <button onClick={addRows} > Confirmar cambios</button>
 </div>
 
 <Toaster/>

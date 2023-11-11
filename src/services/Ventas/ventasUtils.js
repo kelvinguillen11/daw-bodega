@@ -107,3 +107,10 @@ export const DeleteVenta =(venta) =>{
       return true;
     }
  }
+
+ export const mapsIds = () => {
+  const ventas = getVentas();
+  const newVentasMap =  ventas.map((venta,index) => {
+    return {...venta, id : index + 1}});
+  window.localStorage.setItem("Ventas", JSON.stringify(newVentasMap));
+ }
