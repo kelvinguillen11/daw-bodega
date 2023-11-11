@@ -36,17 +36,3 @@ export const BotonUD = ({setFRow,items,eliminateR}) =>{
       </>
     )
 }
-
-export const DataByApi = () =>{
-    const [isOpenModal,openModal,closeModal] = useModals(false); 
-    return(
-       <>
-        <button onClick={openModal}>
-         Interactuar
-       </button>
-       <Modal isOpen={isOpenModal} closeModal={closeModal}>
-        <TablaDataApi/>
-       </Modal>
-       </>
-     )
-}

@@ -1,9 +1,12 @@
 import { useState } from "react";
-function TableRowApi({item}){
+function TableRowApi({item,onclick}){
   const [items,setItems] = useState({...item})
 
+  const rowClicked = () => {
+        onclick(item);
+  }
     return(
-        <tr >
+        <tr onClick={rowClicked}>
             <td>{items.id}</td>
             <td>{items.title}</td>
             <td>{items.price}</td>

@@ -19,7 +19,7 @@ function FormularioProducto({setNewVenta}){
         }
     }
 
-    const notifySuccessVenta = () => toast.success('Usuario creado exitosamente');
+    const notifySuccessVenta = () => toast.success('Registro creado exitosamente');
     const notifyErrorVenta = () => toast.error('Ha ocurrido un error,intentalo mas tarde');
 
     return(

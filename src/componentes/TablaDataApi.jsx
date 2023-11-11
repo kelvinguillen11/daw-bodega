@@ -6,7 +6,7 @@ import { UseDataAPi } from "../services/hooks/useDataApi";
 function TablaDataApi () {
  const [Data, fetchData] = UseDataAPi([]);
  const [notify,setNotify] = useState(false);
-   
+ const [rowSelected,setRowSelected] = useState([]);  
     useEffect(() => {
     const dataNotify = async () =>{
      try {
@@ -28,9 +28,18 @@ function TablaDataApi () {
    
    const notifySuccessVenta = () => toast.success('Datos cargados desde la web');
    const notifyErrorVenta = () => toast.error('Ha ocurrido un error,intentalo mas tarde');
-   const rowClick = () => {
-    
+   const rowClick = (ventaSelected) => {
+      setRowSelected([...rowSelected,ventaSelected]);
+      console.log(rowSelected);
    } 
+
+   const addRowsToWs = () => {
+    const Ventas = window.localStorage.getItem("Ventas");
+    const parseVentas = JSON.parse(Ventas);
+    const newVentas =[...parseVentas,...rowSelected];
+    console.log(newVentas);
+    window.localStorage.setItem("Ventas", JSON.stringify(newVentas));
+   }
    return(
     <main className="Contenedor-trabajo-Principal">
       <div className="container-xl mt-5 mb-5">
@@ -50,14 +59,19 @@ function TablaDataApi () {
   </thead>
   <tbody>
     {Data.length !=0 &&
-    Data.map((venta,index) => (<TableRowApi key={index} item={venta} onclick={clickRow}/>)
+    Data.map((venta,index) => (<TableRowApi key={index} item={venta} onclick={rowClick}/>)
     )
     }
   </tbody>
     
 </table>
 </div>
+<div>
+  <button onClick={addRowsToWs} > Confirmar cambios</button>
+</div>
+
 <Toaster/>
+
 </main>
     );
 }

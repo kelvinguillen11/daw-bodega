@@ -5,13 +5,13 @@ const getUser = () =>{
    const User = getSessionUser();
    return User;
 }
-export const ProtectedRoute = ({children, redirectPath = "/"})=>{
+export const ProtectedRoute = ({ redirectPath = "/"})=>{
    const user = getUser();
     if(!user)
     {
        return <Navigate to={redirectPath}/>
     }
-    return children;
+    return <Outlet/>;
 }
 
 export const ProtectedLogin = ({redirectPath = "/"})=>{

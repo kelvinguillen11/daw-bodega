@@ -3,17 +3,20 @@ import FormularioProducto from "./FormularioProducto";
 import { useTable } from "../services/hooks/useTable";
 import { useEffect, useState} from "react";
 import {toast,Toaster} from 'react-hot-toast';
-import { DataByApi } from "./ElementosBoton";
-
+import { useNavigate } from "react-router-dom";
 function TablaInventario(){
- 
   const [myArraySellers,newVenta,eliminateRow,getLocalStorage] = useTable([]);
   const [notify,setNotify] = useState(false); 
+ 
   useEffect(()=>{
       getLocalStorage();
   },[]);
+
 const notifySuccessVenta = () => toast.success('Datos cargados desde la web');
 const notifyErrorVenta = () => toast.error('Ha ocurrido un error,intentalo mas tarde');
+
+const navigate = useNavigate();
+const goToApi = () => navigate('/Area-Trabajo/DatosWeb');
   return(
       <main className="Contenedor-trabajo-Principal">
       <div className="container-xl mt-5 mb-5">
@@ -25,7 +28,7 @@ const notifyErrorVenta = () => toast.error('Ha ocurrido un error,intentalo mas t
           <h3>Opciones de datos:</h3>
           <div>
             <span>cargar datos desde la Web</span>
-            <DataByApi/>
+            <button onClick={goToApi}>Datos desde la web</button>
           </div>
       </div>
       <div className="container-xxl border border-black rounded-2 mt-5 mb-5">
