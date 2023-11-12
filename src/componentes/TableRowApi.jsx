@@ -4,8 +4,13 @@ import '../hojas-de-estilo/tableRowApi.css'
 function TableRowApi({item,onclick}){
   const [items] = useState({...item})
   const [selected, setSelected]= useState(false);  
-  const rowClicked = () => {
-       if(!selected)
+  const rowClicked = (event) => {
+    if (event.target.tagName.toLowerCase() === 'button')
+    {
+        return;
+    }
+    else{
+    if(!selected)
        {
         onclick(item);
         setSelected(true);
@@ -15,11 +20,16 @@ function TableRowApi({item,onclick}){
        {
         notifySelectedError();
        }
+    }
   }
   const notifySelectedSuccess = () => toast.success(`Ha seleccionado el item No. ${items.id}`);
   const notifySelectedError = () => toast.error("Ya se ha seleccionado anteriormente.")
+
+  const cancelSelection = () =>{
+    setSelected(false)
+  }
     return(
-        <tr onClick={rowClicked} className={selected? "table-success" : ' '}>
+        <tr onClick={rowClicked} className={selected? "table-success" : 'table-light'}>
             <td>{items.id}</td>
             <td>{items.title}</td>
             <td>{items.price}</td>
@@ -30,6 +40,13 @@ function TableRowApi({item,onclick}){
                 <div className="row">
                 </div>
             </td>
+            {
+                selected? (
+                    <td>    
+                    <button className="btn btn-danger" onClick={cancelSelection}>Cancelar seleccion</button>
+                    </td>
+                ) : ' '
+            }
         </tr>
     );
 }
