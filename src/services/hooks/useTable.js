@@ -1,4 +1,4 @@
-import {DeleteVenta, initLocalStorage, createLocalStorage,getVentas} from "../Ventas/ventasUtils";
+import {DeleteVenta, createLocalStorage,getVentas} from "../Ventas/ventasUtils";
 import { useState} from "react";
 
 export const useTable = () =>{

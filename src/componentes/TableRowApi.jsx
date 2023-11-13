@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { toast } from "react-hot-toast";
 import '../hojas-de-estilo/tableRowApi.css'
-function TableRowApi({item,onclick}){
+function TableRowApi({item,onclick,cancelSelect}){
   const [items] = useState({...item})
   const [selected, setSelected]= useState(false);  
   const rowClicked = (event) => {
@@ -24,11 +24,12 @@ function TableRowApi({item,onclick}){
   }
   const notifySelectedSuccess = () => toast.success(`Ha seleccionado el item No. ${items.id}`);
   const notifySelectedError = () => toast.error("Ya se ha seleccionado anteriormente.")
-
-  const cancelSelection = () =>{
-    setSelected(false)
+  const cancelSelection = () =>
+  {
+    cancelSelect(items.id);
+    setSelected(false);
   }
-    return(
+return(
         <tr onClick={rowClicked} className={selected? "table-success" : 'table-light'}>
             <td>{items.id}</td>
             <td>{items.title}</td>
@@ -45,7 +46,7 @@ function TableRowApi({item,onclick}){
                     <td>    
                     <button className="btn btn-danger" onClick={cancelSelection}>Cancelar seleccion</button>
                     </td>
-                ) : ' '
+                ) :<td> </td> 
             }
         </tr>
     );

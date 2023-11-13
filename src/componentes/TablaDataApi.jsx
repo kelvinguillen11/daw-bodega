@@ -1,12 +1,13 @@
 import { useEffect, useState} from "react";
 import {toast,Toaster} from 'react-hot-toast';
-import TableRowApi from "./TableRowApi";
+import TableRowApi from  "./TableRowApi";
 import { UseDataAPi } from "../services/hooks/useDataApi";
 import { addRowsToWs } from "../services/Api/apiUtils";
+import { useSelectedR } from "../services/hooks/useSelectedR";
 function TablaDataApi () {
  const [Data, fetchData] = UseDataAPi([]);
  const [notify,setNotify] = useState(false);
- const [rowSelected,setRowSelected] = useState([]);  
+ const [rowSelected,cancelSelection,rowClick,resetSelect] = useSelectedR([]);
     useEffect(() => {
     const dataNotify = async () =>{
      try {
@@ -29,14 +30,12 @@ function TablaDataApi () {
    const notifySuccessApi = () => toast.success('Datos cargados desde la web');
    const notifyErrorApi = () => toast.error('Ha ocurrido un error,intentalo mas tarde');
    
-   const rowClick = (ventaSelected) => {
-      setRowSelected([...rowSelected,ventaSelected]);
-   } 
+ 
 
    const addRows =  () => {
     if(rowSelected.length !==0){
       addRowsToWs(rowSelected);
-      setRowSelected([]);
+      resetSelect();
       notifySucessData();
     }
     else
@@ -66,7 +65,7 @@ function TablaDataApi () {
   </thead>
   <tbody>
     {Data.length !==0 &&
-    Data.map((venta,index) => (<TableRowApi key={index} item={venta} onclick={rowClick}/>)
+    Data.map((venta,index) => (<TableRowApi key={index} item={venta} onclick={rowClick} cancelSelect={cancelSelection}/>)
     )
     }
   </tbody>

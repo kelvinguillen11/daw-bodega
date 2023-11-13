@@ -12,6 +12,8 @@ export const UseDataAPi = () =>
         } catch (error) {
         }
       };
+
+   
       
      return [Data,fetchData];
 }
