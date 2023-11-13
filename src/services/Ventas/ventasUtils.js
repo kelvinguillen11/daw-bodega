@@ -38,7 +38,7 @@ export const createLocalStorage = () => {
       this.id= id;
       this.title= title;
       this.price = price;
-      this.rating = count;
+      this.count = count;
       this.description = description;
       this.category = category;
     }
@@ -50,7 +50,7 @@ export const newObjectVenta = (data) =>
   newVenta.id = parseInt(data.id);
   newVenta.title = data.title;
   newVenta.price = data.price;
-  newVenta.rating = {count : data.count};
+  newVenta.count= data.count;
   newVenta.description= data.description;
   newVenta.category= data.category;
   setVentas(newVenta);

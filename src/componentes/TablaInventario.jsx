@@ -4,6 +4,7 @@ import { useTable } from "../services/hooks/useTable";
 import { useEffect, useState} from "react";
 import {toast,Toaster} from 'react-hot-toast';
 import { useNavigate } from "react-router-dom";
+import { convertJsonToExcel } from "../services/Excel/excelUtils";
 function TablaInventario(){
   const [myArraySellers,newVenta,eliminateRow,getLocalStorage] = useTable([]);
   const [notify,setNotify] = useState(false); 
@@ -29,6 +30,11 @@ const goToApi = () => navigate('/Area-Trabajo/DatosWeb');
           <div className="d-sm-flex flex-sm-column justify-content-center">
             <span>cargar datos desde la Web</span>
             <button className="btn btn-success" onClick={goToApi}>Datos desde la web</button>
+          </div>
+          <div className="d-sm-flex flex-sm-column justify-content-center">
+            <span>exportar datos a Excel.</span>
+            <div className="btn btn-success" onClick={convertJsonToExcel}>Excel</div>
+            <button></button>
           </div>
       </div>
       <div className="container-xxl border border-black rounded-2 mt-5 mb-5">

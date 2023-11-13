@@ -13,7 +13,7 @@ function TableRowVenta({item, eliminate}){
             <td>{items.id}</td>
             <td>{items.title}</td>
             <td>{items.price}</td>
-            <td>{items.rating.count}</td>
+            <td>{items.count}</td>
             <td className="px-5">{items.description}</td>
             <td>{items.category}</td>
             <td>
