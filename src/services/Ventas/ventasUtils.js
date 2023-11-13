@@ -114,3 +114,8 @@ export const DeleteVenta =(venta) =>{
     return {...venta, id : index + 1}});
   window.localStorage.setItem("Ventas", JSON.stringify(newVentasMap));
  }
+
+ export const resetLocalStorage = () =>{
+  const Reset = [];
+  window.localStorage.setItem('Ventas', JSON.stringify(Reset));
+ }

@@ -2,22 +2,49 @@ import TableRowVenta from "./TableRowVenta";
 import FormularioProducto from "./FormularioProducto";
 import { useTable } from "../services/hooks/useTable";
 import { useEffect, useState} from "react";
-import {toast,Toaster} from 'react-hot-toast';
+import {Toaster} from 'react-hot-toast';
 import { useNavigate } from "react-router-dom";
 import { convertJsonToExcel } from "../services/Excel/excelUtils";
+import { notifyErrorImport, notifyErrorLoad, notifySuccessImport, notifySuccessLoad } from "../Notificaciones/Tabla-Inventario/Notificaciones";
 function TablaInventario(){
-  const [myArraySellers,newVenta,eliminateRow,getLocalStorage] = useTable([]);
+  const [myArraySellers,newVenta,eliminateRow,getLocalStorage,resetWS] = useTable([]);
   const [notify,setNotify] = useState(false); 
- 
   useEffect(()=>{
-      getLocalStorage();
+    const data = async () =>{
+    try {
+        await getLocalStorage();
+        setNotify(true);
+      } catch (error) {
+        setNotify(false);
+      } 
+    }
+    data();
   },[]);
 
-const notifySuccessVenta = () => toast.success('Datos cargados desde la web');
-const notifyErrorVenta = () => toast.error('Ha ocurrido un error,intentalo mas tarde');
+  useEffect(()=>{
+    if(notify)
+    {
+      console.log(myArraySellers.length);
+      (myArraySellers !==null)? notifySuccessLoad() : notifyErrorLoad();
+    }
+  },[notify]);
 
 const navigate = useNavigate();
 const goToApi = () => navigate('/Area-Trabajo/DatosWeb');
+
+const excelImport = () =>{
+  if(myArraySellers.length >= 3)
+  {
+    convertJsonToExcel();
+    resetWS();
+    notifySuccessImport()
+  }  
+  else
+  {
+    notifyErrorImport();
+  }
+}
+
   return(
       <main className="Contenedor-trabajo-Principal">
       <div className="container-xl mt-5 mb-5">
@@ -33,7 +60,7 @@ const goToApi = () => navigate('/Area-Trabajo/DatosWeb');
           </div>
           <div className="d-sm-flex flex-sm-column justify-content-center">
             <span>exportar datos a Excel.</span>
-            <div className="btn btn-success" onClick={convertJsonToExcel}>Excel</div>
+            <div className="btn btn-success" onClick={excelImport}>Excel</div>
             <button></button>
           </div>
       </div>

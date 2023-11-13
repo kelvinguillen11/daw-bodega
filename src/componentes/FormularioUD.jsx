@@ -1,11 +1,14 @@
 import { useForm } from "react-hook-form";
-import { BotonDelete, BotonUpdate } from "./ElementosBoton";
+import { BotonUpdate } from "./UpdateVenta";
+import toast, { Toaster } from "react-hot-toast";
 function FormularioUD({setFunctionRow}) {
 const {register,handleSubmit} = useForm();
 const handlerVenta = (data) =>
     {
         setFunctionRow(data);
+        success();
     }
+    const success = () => toast.success("Modificado exitosamente.");
     return(
             <form className="container-xl row ms-1" onSubmit={handleSubmit(handlerVenta)}>
         <fieldset className="border border-black  rounded-2 mt-3">
@@ -23,7 +26,7 @@ const handlerVenta = (data) =>
             <div className="row col-12 mt-3">
             <div className="col-5">
             <label  className="form-label" >Cantidad vendida</label>
-            <input type="text" className="form-control"{...register('rating.count')}/>
+            <input type="text" className="form-control"{...register('count')}/>
             </div>
             <div className="col-5">
             <label  className="form-label">Categoria del producto</label>
@@ -40,6 +43,7 @@ const handlerVenta = (data) =>
             <BotonUpdate/>
             </div>
         </fieldset>
+        <Toaster/>
         </form>
     );
 }

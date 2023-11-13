@@ -1,4 +1,4 @@
-import { useState } from "react";
+
 import { BotonDelete, BotonUD } from "./ElementosBoton";
 import { UseRows } from "../services/hooks/UseRows";
 function TableRowVenta({item, eliminate}){
@@ -18,7 +18,7 @@ function TableRowVenta({item, eliminate}){
             <td>{items.category}</td>
             <td>
                 <div className="row">
-                <BotonUD setFRow={setRow} items={items} />
+                <BotonUD setFRow={setRow} items={items}/>
                 <BotonDelete items={items} eliminateRow={eliminate}/>
                 </div>
             </td>

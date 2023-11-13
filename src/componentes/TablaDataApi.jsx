@@ -1,6 +1,6 @@
 import { useEffect, useState} from "react";
 import {toast,Toaster} from 'react-hot-toast';
-import TableRowApi from  "./TableRowApi";
+import TableRowApi from "./TableRowApi.jsx";
 import { UseDataAPi } from "../services/hooks/useDataApi";
 import { addRowsToWs } from "../services/Api/apiUtils";
 import { useSelectedR } from "../services/hooks/useSelectedR";
