@@ -1,15 +1,11 @@
-import { useState } from "react";
 import Modal from "./Modal";
-
-export const BotonUpdate = ( )=>{
-    const [isOpen, setIsOpen] = useState(false);
-
-    const openModal= () => setIsOpen(true);
-    
-    const closeModal= () => setIsOpen(false);
+import { useModals } from "../services/hooks/useModals";
+export const BotonUpdate = ({closeAllmodal})=>{
+    const [isOpenModal,openModal,closeModal] = useModals(false); 
     
     const ModificateConfirm = ()=>{
         closeModal();
+        closeAllmodal();
     }
    
     return(
@@ -17,7 +13,7 @@ export const BotonUpdate = ( )=>{
         <button className="btn btn-warning" type="button" onClick={openModal}>
            Modificar
         </button>
-        <Modal isOpen={isOpen} closeModal={closeModal}> 
+        <Modal isOpen={isOpenModal} closeModal={closeModal}> 
         <div className="container-sm">
         <span>Desea guardar los cambios?</span>
         <button  type="submit" onClick={ModificateConfirm}>Guardar</button>

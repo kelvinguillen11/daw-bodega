@@ -3,14 +3,22 @@ import FormularioUD from "./FormularioUD";
 import Modal from "./Modal";
 
 export const BotonDelete = ({items,eliminateRow}) =>{
+    const [isOpenModal,openModal,closeModal] = useModals(false); 
     const Eliminate =() =>{
         eliminateRow(items);
     }
     return(
        <>
-       <button className="btn btn-danger ms-3" onClick={Eliminate}>
+        <button className="btn btn-danger ms-3" onClick={openModal}>
             Eliminar
         </button>
+        <Modal isOpen={isOpenModal} closeModal={closeModal}> 
+        <div className="container-sm">
+        <span>Desea Eliminar el registro No {items.id}?</span>
+        <button  type="button" onClick={Eliminate}>Confirmar</button>
+        <button type="button" onClick={closeModal}>Cancelar</button>
+        </div>
+       </Modal>
        </>
     );
 }
@@ -23,7 +31,7 @@ export const BotonUD = ({setFRow,items}) =>{
         Interactuar
       </button>
       <Modal isOpen={isOpenModal} closeModal={closeModal}>
-      <FormularioUD setFunctionRow={setFRow} ItemsU={items}/>
+      <FormularioUD setFunctionRow={setFRow} ItemsU={items} closeModalForm={closeModal}/>
       </Modal>
       </>
     )
