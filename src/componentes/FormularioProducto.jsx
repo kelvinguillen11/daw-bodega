@@ -31,9 +31,12 @@ function FormularioProducto({setNewVenta}){
             <label className="form-label">ID producto</label>
             <input type="text" className="form-control" {...register('id',{
                 required: true,
-                validate:  findVentaById
+                validate:  findVentaById,
+                pattern: /^[1-9]\d*$/
+
             })}/>
-            {errors.id?.type === 'validate' && <p>Este Id, ya existe!.</p>}
+            {errors.id?.type === 'validate' && <p>Este Id ya existe!.</p>}
+            {errors.id?.type === 'pattern' && <p>No es un Id valido.</p>}
             </div>
             <div className="col-4">
             <label  className="form-label">Nombre producto</label>

@@ -1,3 +1,4 @@
+
 class Usuario {
     constructor(nombre,apellido,correo,dui,contrasena){
         this.Nombre = nombre;
@@ -33,10 +34,16 @@ const createObjectUsuario = (data) =>
 }
 export const RegisterUser = (data) =>
 {
-    const arrayUser= getUser();
-    const User = createObjectUsuario(data);
-    arrayUser.push(User);
-    window.localStorage.setItem("users", JSON.stringify(arrayUser));
+    try{
+        const arrayUser= getUser();
+        const User = createObjectUsuario(data);
+        arrayUser.push(User);
+        window.localStorage.setItem("users", JSON.stringify(arrayUser));
+    }catch
+    {
+        throw new Error("Intentelo mas tarde");
+    }
+        
 }
 
 export const findUserByDui = (value) =>

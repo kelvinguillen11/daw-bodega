@@ -4,7 +4,8 @@ import VideoPrincipal from "./VideoPrincipal";
 import {BiUser,BiEnvelope,BiIdCard, BiLockAlt} from "react-icons/bi";
 import {useForm} from 'react-hook-form';
 import  {findUserByDui, RegisterUser, isPasswordValidate} from'../services/User/userUtils';
-import {toast,Toaster} from 'react-hot-toast';
+import {Toaster} from 'react-hot-toast';
+import { notifySuccessRegister,notifyErrorRegister } from '../Notificaciones/Registro/Notificaciones';
 function Registro() {
 
   const {register,formState : {errors}, handleSubmit, getValues} = useForm();
@@ -14,13 +15,13 @@ function Registro() {
    try{ 
     RegisterUser(data);
     notifySuccessRegister();
+    
   }catch(error)
   {
     notifyErrorRegister();
   }
   }
-  const notifySuccessRegister = () => toast.success('Usuario creado exitosamente');
-  const notifyErrorRegister = () => toast.error('Ha ocurrido un error,intentalo mas tarde');
+ 
   return (
     <>
     <VideoPrincipal/>
@@ -35,10 +36,12 @@ function Registro() {
         <input type="text" className='form-control bg-transparent text-white'  aria-describedby="Nombre" 
         {...register('NombreUsuario',{
             required: true,
-            //escribe aqui pattern: /tu regExp/
+            pattern: /^[A-Za-záéíóúüñÁÉÍÓÚÜÑ\s']+$/
+
         })}
         />
         </div>
+        {errors.NombreUsuario?.type === "pattern" && <p>No es un nombre valido.</p>}
         </div>
         <div className='mt-2'>
         <label>Apellido</label>
@@ -47,11 +50,11 @@ function Registro() {
         <input type="text" className='form-control bg-transparent text-white'  aria-describedby="Apellido" 
         {...register('apellidoUsuario',{
           required: true,
-          //escribe aqui pattern: /tu regExp/
+          pattern: /^[A-Za-záéíóúüñÁÉÍÓÚÜÑ\s']+$/
         })}
         />
         </div>
-        
+        {errors.apellidoUsuario?.type === "pattern" && <p>No es un apellido valido.</p>}
       </div>
       <div className='mt-2'>
         <label>Correo</label>
