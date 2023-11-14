@@ -8,7 +8,7 @@ import { useForm } from 'react-hook-form';
 import { useNavigate } from 'react-router-dom';
 import { loginUser } from '../services/User/userUtils';
 import {SetSessionUser} from '../services/UserSession/SessionUtils';
-
+import {toast,Toaster} from 'react-hot-toast';
 function LoginFormulario({setUser}) {
   const navigate = useNavigate();
   const {register,handleSubmit} = useForm();
@@ -19,7 +19,11 @@ function LoginFormulario({setUser}) {
       SetSessionUser(data);
       navigate("/Area-Trabajo");
     }
+    else{
+      errorUser();
+    }
 }
+  const errorUser = () => toast.error("Contraseña o usuario incorrectos.");
   return (
     <>
     <HeaderPrincipal/>
@@ -51,6 +55,7 @@ function LoginFormulario({setUser}) {
     </form>
     </div>
     </div>
+    <Toaster/>
     <FooterPrincipal/>
     </>
   );

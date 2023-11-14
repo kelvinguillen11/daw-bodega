@@ -60,10 +60,11 @@ function Registro() {
         <input type="email" className='form-control bg-transparent text-white' aria-describedby="Correo" 
         {...register('emailUsuario',{
           required: true,
-          //escribe aqui pattern: /tu regExp/
+          pattern: /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/
         })}
         />
         </div>
+        {errors.emailUsuario?.type === "pattern" && <p>No es un correo valido.</p>}
       </div>
       <div className='mt-2'>
         <label>DUI</label>
