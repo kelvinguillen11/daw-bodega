@@ -4,6 +4,8 @@ import TableRowApi from "./TableRowApi.jsx";
 import { UseDataAPi } from "../services/hooks/useDataApi";
 import { addRowsToWs } from "../services/Api/apiUtils";
 import { useSelectedR } from "../services/hooks/useSelectedR";
+import { ConfirmDataApi } from "./ElementosBoton.jsx";
+import { useNavigate } from "react-router-dom";
 function TablaDataApi () {
  const [Data, fetchData] = UseDataAPi([]);
  const [notify,setNotify] = useState(false);
@@ -31,12 +33,14 @@ function TablaDataApi () {
    const notifyErrorApi = () => toast.error('Ha ocurrido un error,intentalo mas tarde');
    
  
+  const navigate = useNavigate();
 
    const addRows =  () => {
     if(rowSelected.length !==0){
       addRowsToWs(rowSelected);
       resetSelect();
       notifySucessData();
+      navigate('/Area-Trabajo');
     }
     else
     {
@@ -72,10 +76,7 @@ function TablaDataApi () {
     
 </table>
 </div>
-<div>
-  <button onClick={addRows} > Confirmar cambios</button>
-</div>
-
+<ConfirmDataApi addData={addRows} />
 <Toaster/>
 
 </main>

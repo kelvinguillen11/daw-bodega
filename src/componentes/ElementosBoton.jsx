@@ -36,3 +36,26 @@ export const BotonUD = ({setFRow,items}) =>{
       </>
     )
 }
+
+export const ConfirmDataApi = ({addData}) => {
+  const [isOpenModal,openModal,closeModal] = useModals(false); 
+  const confirmProcess = () =>{
+    addData();
+    closeModal();
+  }
+ 
+  return(
+     <>
+    <div>
+    <button onClick={openModal}> Importar Datos</button>
+   </div>
+    <Modal isOpen={isOpenModal} closeModal={closeModal}>
+     <div className="container-sm">
+        <span>La siguiente accion importara datos hacia su area de trabajo</span>
+        <button  type="button" onClick={confirmProcess}>Confirmar</button>
+        <button type="button" onClick={closeModal}>Cancelar</button>
+        </div>  
+     </Modal>
+     </>
+   )
+}
