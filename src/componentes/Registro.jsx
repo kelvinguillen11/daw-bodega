@@ -72,11 +72,12 @@ function Registro() {
         <input type="text" className='form-control bg-transparent text-white'  aria-describedby="DUI"
         {...register('duiUsuario',{
           validate : findUserByDui,
-          //escribe aqui pattern: /tu regExp/
+          pattern: /^(\d{8}-\d{1})$/
         })}
         />
         </div>
         {errors.duiUsuario?.type === "validate" && <p>Este Dui ya esta registrado.</p>}
+        {errors.duiUsuario?.type === "pattern" && <p>No es un Dui valido.</p>}
         </div>
         <div className='mt-2'>
         <label>Contraseña
