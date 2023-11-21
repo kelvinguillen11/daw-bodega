@@ -69,7 +69,7 @@ function FormularioProducto({setNewVenta}){
             <label  className="form-label">Categoria del producto</label>
             <input type="text"  className="form-control" {...register('category',{
                 required: true,
-                pattern: /^[a-zA-Z]+$/
+                pattern: /^[a-zA-Z' ]+$/
             })}/>
             {errors.category?.type === "pattern" && <p>No es una categoria valida.</p>}
             </div>
