@@ -8,14 +8,14 @@ import {Toaster} from 'react-hot-toast';
 import { notifySuccessRegister,notifyErrorRegister } from '../Notificaciones/Registro/Notificaciones';
 function Registro() {
 
-  const {register,formState : {errors}, handleSubmit, getValues} = useForm();
+  const {register,formState : {errors}, handleSubmit, getValues,reset} = useForm();
   
   const setUserRegister = (data) =>
   {
    try{ 
     RegisterUser(data);
     notifySuccessRegister();
-    
+    reset();
   }catch(error)
   {
     notifyErrorRegister();
@@ -28,7 +28,7 @@ function Registro() {
     <div className='contenedor-registro-principal'>
     <div className='registro-wrapper'>
     <h1>Registro</h1>
-    <form action="" onSubmit={handleSubmit(setUserRegister)}>
+    <form  onSubmit={handleSubmit(setUserRegister)}>
       <div className=' text-white'>
         <label>Nombre</label>
         <div className='input-group mt-1 '>
@@ -37,11 +37,11 @@ function Registro() {
         {...register('NombreUsuario',{
             required: true,
             pattern: /^[A-Za-záéíóúüñÁÉÍÓÚÜÑ\s']+$/
-
         })}
         />
         </div>
         {errors.NombreUsuario?.type === "pattern" && <p>No es un nombre valido.</p>}
+        {errors.NombreUsuario?.type === "required" && <p>*</p>}
         </div>
         <div className='mt-2'>
         <label>Apellido</label>
@@ -55,6 +55,7 @@ function Registro() {
         />
         </div>
         {errors.apellidoUsuario?.type === "pattern" && <p>No es un apellido valido.</p>}
+        {errors.apellidoUsuario?.type === "required" && <p>*</p>}
       </div>
       <div className='mt-2'>
         <label>Correo</label>
@@ -68,6 +69,7 @@ function Registro() {
         />
         </div>
         {errors.emailUsuario?.type === "pattern" && <p>No es un correo valido.</p>}
+        {errors.emailUsuario?.type === "required" && <p>*</p>}
       </div>
       <div className='mt-2'>
         <label>DUI</label>
@@ -75,6 +77,7 @@ function Registro() {
         <span className="input-group-text bg-transparent text-white" id="DUI"><BiIdCard/></span>
         <input type="text" className='form-control bg-transparent text-white'  aria-describedby="DUI"
         {...register('duiUsuario',{
+          required: true,
           validate : findUserByDui,
           pattern: /^(\d{8}-\d{1})$/
         })}
@@ -82,6 +85,7 @@ function Registro() {
         </div>
         {errors.duiUsuario?.type === "validate" && <p>Este Dui ya esta registrado.</p>}
         {errors.duiUsuario?.type === "pattern" && <p>No es un Dui valido.</p>}
+        {errors.duiUsuario?.type === "required" && <p>*</p>}
         </div>
         <div className='mt-2'>
         <label>Contraseña
@@ -90,8 +94,7 @@ function Registro() {
         <span className="input-group-text bg-transparent text-white" id="Password"><BiLockAlt/></span>
         <input type="text"  className='form-control bg-transparent text-white' aria-describedby="Password" 
         {...register('passwordUsuario',{
-          required: true,
-          //escribe aqui pattern: /tu regExp/
+          required: true
         })}/>
         </div>
       </div>
@@ -102,7 +105,6 @@ function Registro() {
         <input type="text"  className='form-control bg-transparent text-white' aria-describedby="Password" 
         {...register('repeatpassword',{
           validate: (value) => isPasswordValidate(value, getValues("passwordUsuario")),
-          //escribe aqui pattern: /tu regExp/
         })}/>
         </div>
         {errors.repeatpassword?.type === "validate" && <p>Las contraseñas no coinciden.</p>}

@@ -3,7 +3,7 @@ import { newObjectVenta, findVentaById } from "../services/Ventas/ventasUtils";
 import { isSessionExist} from "../services/UserSession/SessionUtils";
 import {toast,Toaster} from 'react-hot-toast';
 function FormularioProducto({setNewVenta}){
-    const {register,handleSubmit, formState:{errors}} = useForm();
+    const {register,handleSubmit, formState:{errors},reset} = useForm();
     
     const RegisterVenta = (data) =>
     {
@@ -12,6 +12,7 @@ function FormularioProducto({setNewVenta}){
             const handlerData = newObjectVenta(data);
             setNewVenta(handlerData);
             notifySuccessVenta();
+            reset();
         }
         else
         {
@@ -40,27 +41,47 @@ function FormularioProducto({setNewVenta}){
             </div>
             <div className="col-4">
             <label  className="form-label">Nombre producto</label>
-            <input type="text"  className="form-control" {...register('title')}/>
+            <input type="text"  className="form-control" {...register('title',{
+                required: true,
+                pattern:/^[a-zA-Z0-9]+(?:\s+[a-zA-Z0-9]+)*$/
+            })}/>
+            {errors.title?.type === "pattern" && <p>No es un titulo valido.</p>}
             </div>
             <div className="col-4">
             <label  className="form-label">Precio unitario</label>
-            <input type="text"  className="form-control" {...register('price')}/>
+            <input type="text"  className="form-control" {...register('price',{
+                required: true,
+                pattern: /^[1-9]\d*(\.\d{2})$/
+            })}/>
+            {errors.price?.type === "pattern" && <p>No es un precio valido.</p>}
             </div>
             </div>
             <div className="row col-12 mt-3">
             <div className="col-4">
             <label  className="form-label" >Cantidad vendida</label>
-            <input type="text" className="form-control"{...register('count')}/>
+            <input type="text" className="form-control"{...register('count',{
+                 required: true,
+                 pattern: /^[1-9]\d*$/
+            })}/>
+            {errors.count?.type === "pattern" && <p>No es una cantidad valida.</p>}
             </div>
             <div className="col-4">
             <label  className="form-label">Categoria del producto</label>
-            <input type="text"  className="form-control" {...register('category')}/>
+            <input type="text"  className="form-control" {...register('category',{
+                required: true,
+                pattern: /^[a-zA-Z]+$/
+            })}/>
+            {errors.category?.type === "pattern" && <p>No es una categoria valida.</p>}
             </div>
             </div>
             <div className="row col-12 mt-3 ">
             <div className="col-12">
             <label className="form-label">Descripcion del producto</label>
-            <textarea className="w-100" rows="2" {...register('description')}/>
+            <textarea className="w-100" rows="2" {...register('description',{
+                required: true,
+                pattern: /^[a-zA-Z0-9.,'"\s]+$/
+            })}/>
+            {errors.description?.type === "pattern" && <p>No es una descripcion valida.</p>}
             </div>
             </div>
             <div className="row col-12  mt-5 mb-3 justify-content-end">          
