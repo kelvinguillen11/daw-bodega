@@ -2,7 +2,7 @@ import { useForm } from "react-hook-form";
 import { BotonUpdate } from "./UpdateVenta";
 import  { Toaster } from "react-hot-toast";
 function FormularioUD({setFunctionRow,closeModalForm,ItemsU}) {
-const {register,handleSubmit,reset, formState : {errors}} = useForm({
+const {register,handleSubmit, formState : {errors}} = useForm({
     defaultValues: {
         title: ItemsU.title,
         price: ItemsU.price,
@@ -14,7 +14,6 @@ const {register,handleSubmit,reset, formState : {errors}} = useForm({
 const handlerVenta = (data) =>
     {
         setFunctionRow(data);
-        reset();
     }
     return(
             <form className="container-xl row ms-1" onSubmit={handleSubmit(handlerVenta)}>

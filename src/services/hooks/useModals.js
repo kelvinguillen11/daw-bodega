@@ -9,3 +9,4 @@ export const useModals = (initialValue = false) => {
 
   return [isOpen,openModal,closeModal];
 }
+
