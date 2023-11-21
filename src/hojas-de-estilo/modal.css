@@ -20,9 +20,8 @@
     background-color: #fff;
     min-width: 31.25rem;
     max-width: 100%;
-    min-height: 31.25rem;
+    min-height: 12.5rem;
     max-height: 37.5rem;
-   
 }
 
 .modal-close

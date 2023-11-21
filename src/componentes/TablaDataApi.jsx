@@ -52,7 +52,15 @@ function TablaDataApi () {
    const notifyerrorData = () => {toast.error('No hay datos para importar, seleccione al menos uno.')};
    return(
     <main className="Contenedor-trabajo-Principal">
-      <div className="container-xl mt-5 mb-5">
+      <div className="container-xl mt-5 mb-5 bg-success border rounded">
+     <h2 className="fs-1 text-center">Importar datos desde la web</h2>
+      </div>
+      <div className="container-xl mt-5 mb-5 border ">
+        <p>El siguiente apatardo muestra todos los datos que han podido ser rescatados de nuestra base de datos, el cual se pone a disposicion de cada 
+          usuario de nuestra aplicacion, para poder  importar a su area de trabajo.
+        </p>
+
+        <span className="fw-bold">Selecciona dando click al registro que quiera importar.</span>
       </div>
       <div className="container-xxl border border-black rounded-2 mt-5 mb-5">
         <table className="table">

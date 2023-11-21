@@ -14,10 +14,15 @@ export const BotonUpdate = ({closeAllmodal})=>{
            Modificar
         </button>
         <Modal isOpen={isOpenModal} closeModal={closeModal}> 
-        <div className="container-sm">
-        <span>Desea guardar los cambios?</span>
-        <button  type="submit" onClick={ModificateConfirm}>Guardar</button>
-        <button type="button" onClick={closeModal}>Cancelar</button>
+        <div className="container-sm d-flex  flex-column justify-content-center align-items-center">
+        <div className="mt-5 container-lg text-center">
+        <span className="fs-5">Desea guardar los cambios?</span>
+        </div>
+        <div className="container-lg mt-5 d-flex justify-content-center">
+        <button className="btn btn-success" type="submit" onClick={ModificateConfirm}>Guardar</button>
+        <button className="btn btn-light" type="button" onClick={closeModal}>Cancelar</button>
+        </div>
+
         </div>
         </Modal>
         </>

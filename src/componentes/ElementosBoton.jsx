@@ -9,14 +9,18 @@ export const BotonDelete = ({items,eliminateRow}) =>{
     }
     return(
        <>
-        <button className="btn btn-danger ms-3" onClick={openModal}>
+        <button className="btn btn-danger mt-1" onClick={openModal}>
             Eliminar
         </button>
         <Modal isOpen={isOpenModal} closeModal={closeModal}> 
-        <div className="container-sm">
-        <span>Desea Eliminar el registro No {items.id}?</span>
-        <button  type="button" onClick={Eliminate}>Confirmar</button>
-        <button type="button" onClick={closeModal}>Cancelar</button>
+        <div className="container-sm d-flex  flex-column justify-content-center align-items-center">
+        <div className="mt-5 container-lg text-center">
+        <span className="fs-5">Desea Eliminar el registro No {items.id}?</span>
+        </div>
+         <div className="container-lg mt-5 d-flex justify-content-center">
+        <button className="btn btn-danger" type="button" onClick={Eliminate}>Confirmar</button>
+        <button className="btn btn-success" type="button" onClick={closeModal}>Cancelar</button>
+         </div>
         </div>
        </Modal>
        </>
@@ -47,13 +51,20 @@ export const ConfirmDataApi = ({addData}) => {
   return(
      <>
     <div>
-    <button onClick={openModal}> Importar Datos</button>
+    <button className="btn btn-success mb-3" onClick={openModal}> Importar Datos</button>
    </div>
     <Modal isOpen={isOpenModal} closeModal={closeModal}>
-     <div className="container-sm">
-        <span>La siguiente accion importara datos hacia su area de trabajo</span>
-        <button  type="button" onClick={confirmProcess}>Confirmar</button>
-        <button type="button" onClick={closeModal}>Cancelar</button>
+     <div className="container-sm d-flex  flex-column justify-content-center align-items-center">
+        <div className="mt-5 container-lg text-center">
+        <span className="mt-3 d-block">La siguiente accion importara datos hacia su area de trabajo.</span>
+         <strong> 
+         <p>Desea continuar?</p>       
+         </strong>
+         </div>
+        <div className="container-lg mt-3 d-flex justify-content-center">
+        <button className="btn btn-success" type="button" onClick={confirmProcess}>Confirmar</button>
+        <button className="btn btn-secondary ms-1" type="button" onClick={closeModal}>Cancelar</button>
+        </div>
         </div>  
      </Modal>
      </>
