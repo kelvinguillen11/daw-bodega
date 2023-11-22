@@ -24,7 +24,7 @@ const handlerVenta = (data) =>
             <label  className="form-label">Nombre producto</label>
             <input type="text"  className="form-control" {...register('title',{
                 required: true,
-                pattern:/^[a-zA-Z0-9]+(?:\s+[a-zA-Z0-9]+)*$/
+                pattern:/^[a-zA-Z0-9.,'"\s\-]+$/
             })}/>
             {errors.title?.type === "pattern" && <p>No es un titulo valido.</p>}
             </div>
@@ -60,7 +60,7 @@ const handlerVenta = (data) =>
             <label className="form-label">Descripcion del producto</label>
             <textarea className="w-100" rows="2" {...register('description',{
                 required: true,
-                pattern: /^[a-zA-Z0-9.,'"\s]+$/
+                pattern: /^[a-zA-Z0-9.,'"\s\-]+$/
             })}/>
               {errors.description?.type === "pattern" && <p>No es una descripcion valida.</p>}
             </div>
