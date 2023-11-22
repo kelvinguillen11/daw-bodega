@@ -79,7 +79,7 @@ function FormularioProducto({setNewVenta}){
             <label className="form-label">Descripcion del producto</label>
             <textarea className="w-100" rows="2" {...register('description',{
                 required: true,
-                pattern: /^[a-zA-Z0-9.,'"\s\-()%$#¡!?]+$/u
+                pattern: /^[^<>]*$/
             })}/>
             {errors.description?.type === "pattern" && <p>No es una descripcion valida.</p>}
             </div>
